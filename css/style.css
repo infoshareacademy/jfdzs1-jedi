@@ -1,0 +1,21 @@
+
+/* ------------ GLOBAL VAR ------------ */
+body{
+    margin: 0;
+}
+
+/* ------------ END GLOBAL VAR -------- */
+
+
+/* ------------ LANDING PICTURE ------- */
+.landing_picture{
+    display: flex;
+    flex: 1;
+    max-height: 700px;
+    align-content: stretch;
+    text-align: center;
+
+}
+img{
+    width: 100%;
+}
