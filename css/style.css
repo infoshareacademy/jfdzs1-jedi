@@ -2,6 +2,7 @@
 /* ------------ GLOBAL VAR ------------ */
 body{
     margin: 0;
+    /*height: 100%;*/
 }
 
 /* ------------ END GLOBAL VAR -------- */
@@ -11,11 +12,20 @@ body{
 .landing_picture{
     display: flex;
     flex: 1;
-    max-height: 700px;
-    align-content: stretch;
-    text-align: center;
+    min-height: 700px;
+    text-align: left;
+    flex-direction: column;
+    background-image: url("../images/picture.jpg");
+    background-size: cover;
+}
+.landing_picture h1{
+    padding: 25% 0 0 10%;
+    color: darkorange;
+    font-size: 400%;
+}
+.landing_picture h2{
+    margin: -1% 0 0 15%;
+    color: white;
+    font-size: 270%;
+}
 
-}
-img{
-    width: 100%;
-}
