@@ -15,14 +15,14 @@ div.comingsoon{
     color: #36312C;
 }
 
-input.radiusLeft{
+input.radiusleft{
     height: 25px;
     width: 250px;
     text-align: center;
     border-radius: 50px 0px 0px 50px;
 }
 
-input.radiusRight{
+input.radiusright{
     height: 31px;
     width: 100px;
     border-radius: 0px 50px 50px 0px;
