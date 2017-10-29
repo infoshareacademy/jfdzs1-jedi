@@ -1,3 +1,4 @@
+
 /* ------------ GLOBAL VAR ------------ */
 body{
     margin: 0;
@@ -109,4 +110,64 @@ div.information{
     margin-top: 10px;
 }
 
+/*********************************/
+
+/*********about authors***********/
+
+.author h1{
+    font-weight: 800;
+    font-size: 50px;
+    color: #FF8619;
+}
+
+div.authors{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+div.author{
+    display: inline-block;
+    margin: 0px;
+    margin-left: 20px;
+}
+
+div.icons{
+    display: inline-block;
+    width: 30px;
+    height: 369px;
+}
+
+.photo{
+    width: 200px;
+    height: 300px;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-top: 10px;
+}
+
+.icon:hover{
+    width: 30px;
+    height: 30px;
+}
+
+.name{
+    color: #FF8619;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.function{
+    color: #36312C;
+}
+
+.authorinfo {
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+}
 /*********************************/
