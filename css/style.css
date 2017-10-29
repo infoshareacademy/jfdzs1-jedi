@@ -1,4 +1,6 @@
-div.comingsoon{
+/***********Coming soon***********/
+
+.comingsoon{
     text-align: center;
     margin-top: 15%;
     width: 100%;
@@ -34,3 +36,5 @@ div.information{
     color: #36312C;
     margin-top: 10px;
 }
+
+/*********************************/
