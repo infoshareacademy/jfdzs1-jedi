@@ -2,30 +2,75 @@
 /* ------------ GLOBAL VAR ------------ */
 body{
     margin: 0;
+
     /*height: 100%;*/
+
 }
 
 /* ------------ END GLOBAL VAR -------- */
+/*NAV*/
+nav{
+    height: 70px;
+    width: 100%;
+    background-color: #36312C;
+    color: #36312C;
 
-
+}
+nav img{
+    height:70px;
+}
+nav ul, li{
+    display: block;
+    float: right;
+    color: white;
+    margin-right: 20px;
+    font-size: x-large;
+    font-weight: 700;
+}
 /* ------------ LANDING PICTURE ------- */
 .landing_picture{
+    clear: both;
+    margin: 1px 0 0 0;
     display: flex;
     flex: 1;
-    min-height: 700px;
+    width: 100%;
     text-align: left;
     flex-direction: column;
-    background-image: url("../images/picture.jpg");
+    background-image: url("../images/fs-banner.jpg");
     background-size: cover;
 }
+.landing_picture img{
+    max-width: 100%;
+
+}
 .landing_picture h1{
-    padding: 25% 0 0 10%;
-    color: darkorange;
+    padding: 10% 0 0 10%;
+    color: #36312C;
     font-size: 400%;
 }
 .landing_picture h2{
     margin: -1% 0 0 15%;
-    color: white;
+    color: #36312C;
     font-size: 270%;
 }
+button[type=button]{
+    background-color: #FF8619;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: larger;
+}
+button[type=button]:hover{
+    font-size: xx-large;
+}
+/*.landing_picture a{*/
+    /*text-align: center;*/
+/*}*/
 
+.landing_picture div{
+    text-align: center;
+    margin: 2em;
+    min-height: 70px;
+}
