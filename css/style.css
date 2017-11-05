@@ -1,20 +1,183 @@
-
-body
-{
+/* ------------ GLOBAL VAR ------------ */
+body{
+    margin: 0;
     width: 100%;
-    height: 100%;
-    display: flex;
 }
 
+/* ------------ END GLOBAL VAR -------- */
+/*NAV*/
+nav{
+    height: 70px;
+    width: 100%;
+    background-color: #36312C;
+    color: #36312C;
 
+}
+nav img{
+    height:70px;
+}
+nav ul, li{
+    display: block;
+    float: right;
+    color: white;
+    margin-right: 20px;
+    font-size: x-large;
+    font-weight: 700;
+}
+/* ------------ LANDING PICTURE ------- */
+.landing_picture{
+    clear: both;
+    margin: 1px 0 0 0;
+    display: flex;
+    flex: 1;
+    width: 100%;
+    text-align: left;
+    flex-direction: column;
+    background-image: url("../images/fs-banner.jpg");
+    background-size: cover;
+}
+.landing_picture img{
+    max-width: 100%;
 
+}
+.landing_picture h1{
+    padding: 10% 0 0 10%;
+    color: #36312C;
+    font-size: 400%;
+}
+.landing_picture h2{
+    margin: -1% 0 0 15%;
+    color: #36312C;
+    font-size: 270%;
+}
+button[type=button]{
+    background-color: #FF8619;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: larger;
+}
+button[type=button]:hover{
+    font-size: xx-large;
+}
+/*.landing_picture a{*/
+    /*text-align: center;*/
+/*}*/
+
+.landing_picture div{
+    text-align: center;
+    margin: 2em;
+    min-height: 70px;
+}
+/***********Coming soon***********/
+
+.comingsoon{
+    text-align: center;
+    margin-top: 15%;
+    width: 100%;
+    height: 50%;
+}
+
+.comingsoon h1{
+    font-weight: 800;
+    font-size: 50px;
+    color: #FF8619;
+}
+
+.comingsoon h2{
+    color: #36312C;
+}
+
+input.radiusleft{
+    height: 25px;
+    width: 250px;
+    text-align: center;
+    border-radius: 50px 0px 0px 50px;
+}
+
+input.radiusright{
+    height: 31px;
+    width: 100px;
+    border-radius: 0px 50px 50px 0px;
+    background: #FF8619;
+    color: #E5D2BC;
+}
+
+div.information{
+    color: #36312C;
+    margin-top: 10px;
+}
+
+/*********************************/
+
+/*********about authors***********/
+
+.author h1{
+    font-weight: 800;
+    font-size: 50px;
+    color: #FF8619;
+}
+
+div.authors{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+div.author{
+    display: inline-block;
+    margin: 0px;
+    margin-left: 20px;
+}
+
+div.icons{
+    display: inline-block;
+    width: 30px;
+    height: 369px;
+}
+
+.photo{
+    width: 200px;
+    height: 300px;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-top: 10px;
+}
+
+.icon:hover{
+    width: 30px;
+    height: 30px;
+}
+
+.name{
+    color: #FF8619;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.function{
+    color: #36312C;
+}
+
+.authorinfo {
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+}
+/*********************************/
+/*********four icons*************/
 .fouricons
 {
     display: flex;
     background-color: #36312C;
     width: 100%;
     height: 300px;
-    margin: auto 150px auto 150px;
     text-align: center;
 }
 
@@ -40,3 +203,4 @@ body
     font-size:5em;
     padding: 3px;
 }
+/*********************************/
