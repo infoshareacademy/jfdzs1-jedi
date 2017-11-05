@@ -109,9 +109,40 @@ div.information{
     color: #36312C;
     margin-top: 10px;
 }
-
 /*********************************/
+/*********four icons*************/
+.fourIcons
+{
+    display: flex;
+    background-color: #36312C;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+}
 
+.fourIcons div
+
+{
+    /*background-color: green;*/
+    display: flex;
+    margin: auto auto auto auto;
+    flex-direction: column;
+    text-align: center;
+    color: /*#FF8619*/ #E5D2BC;
+
+}
+
+.fourIcons div i
+{
+    /*font-size:8em;*/
+}
+
+.fourIcons div span
+{
+    font-size:5em;
+    padding: 3px;
+}
+/*********************************/
 /*********about authors***********/
 
 .author h1{
@@ -170,37 +201,5 @@ div.icons{
     display: inline-block;
     width: 200px;
 }
-/*********************************/
-/*********four icons*************/
-.fouricons
-{
-    display: flex;
-    background-color: #36312C;
-    width: 100%;
-    height: 300px;
-    text-align: center;
-}
 
-.fouricons div
-
-{
-    /*background-color: green;*/
-    display: flex;
-    margin: auto auto auto auto;
-    flex-direction: column;
-    text-align: center;
-    color: /*#FF8619*/ #E5D2BC;
-
-}
-
-.fouricons div i
-{
-    /*font-size:8em;*/
-}
-
-.fouricons div span
-{
-    font-size:5em;
-    padding: 3px;
-}
 /*********************************/
