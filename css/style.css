@@ -1,53 +1,84 @@
 /* ------------ GLOBAL VAR ------------ */
-body{
+body {
     margin: 0;
     width: 100%;
 }
 
 /* ------------ END GLOBAL VAR -------- */
 /*NAV*/
-nav{
+nav {
     /*max-height: 125px;*/
     width: 100%;
     background-color: #36312C;
     color: #36312C;
     position: fixed;
     border-bottom: 5px solid #FF8619;
+    z-index: 1;
 }
 
-.navbar{
+.navbar {
     margin: 0;
-    height: 125px;
+    min-height: 125px;
+}
+
+.navbar-inverse {
+    display: flex;
+
+}
+
+.container-fluid {
+    min-width: 58%;
+    display: flex;
+    margin-right: 0;
+    padding: 0;
 }
 
 .navbar-nav {
-    float: right;
-    margin-top: 40px;
-}
-.navbar-header{
-    width: 58%;
-}
-.navbar-brand{
-    float: right;
+    align-items: center;
+    display: inline-flex;
+    margin-left: auto;
 }
 
-.navbar-inverse .navbar-nav>li>a:hover{
+.navbar-inverse .navbar-nav > li > a:hover {
     color: #FF8619;
     font-size: 1.2em;
 }
-nav img{
-    max-height:500%;
+
+nav img {
+    max-height: 500%;
 }
-nav ul, li{
+
+nav ul, li {
     display: block;
     float: right;
-    color: white;
-    margin-right: 20px;
     font-size: x-large;
     font-weight: 700;
+    white-space: nowrap;
 }
+
+@media screen and (min-width: 768px) {
+    .rwd {
+        display: none;
+        background-color: #4cae4c;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wide {
+        display: none;
+    }
+
+    .navbar-nav {
+        display: grid;
+    }
+
+    .navbar-header {
+        min-width: 100%;
+    }
+}
+
 /* ------------ LANDING PICTURE ------- */
-.landing_picture{
+.landing_picture {
     clear: both;
     /*margin: 1px 0 0 0;*/
     display: flex;
@@ -58,21 +89,26 @@ nav ul, li{
     background-image: url("../images/fs-banner.jpg");
     background-size: cover;
 }
-.landing_picture img{
+
+.landing_picture img {
     max-width: 100%;
+    height: 100%;
 
 }
-.landing_picture h1{
+
+.landing_picture h1 {
     padding: 10% 0 0 10%;
     color: #36312C;
     font-size: 400%;
 }
-.landing_picture h2{
+
+.landing_picture h2 {
     margin: -1% 0 0 15%;
     color: #36312C;
     font-size: 270%;
 }
-button[type=button]{
+
+button[type=button] {
     background-color: #FF8619;
     color: white;
     padding: 12px 20px;
@@ -81,45 +117,48 @@ button[type=button]{
     cursor: pointer;
     font-size: larger;
 }
-button[type=button]:hover{
+
+button[type=button]:hover {
     font-size: xx-large;
 }
+
 /*.landing_picture a{*/
-    /*text-align: center;*/
+/*text-align: center;*/
 /*}*/
 
-.landing_picture div{
+.landing_picture div {
     text-align: center;
     margin: 2em;
     min-height: 70px;
 }
+
 /***********Coming soon***********/
 
-.comingsoon{
+.comingsoon {
     text-align: center;
     margin-top: 15%;
     width: 100%;
     height: 50%;
 }
 
-.comingsoon h1{
+.comingsoon h1 {
     font-weight: 800;
     font-size: 50px;
     color: #FF8619;
 }
 
-.comingsoon h2{
+.comingsoon h2 {
     color: #36312C;
 }
 
-input.radiusleft{
+input.radiusleft {
     height: 25px;
     width: 250px;
     text-align: center;
     border-radius: 50px 0px 0px 50px;
 }
 
-input.radiusright{
+input.radiusright {
     height: 31px;
     width: 100px;
     border-radius: 0px 50px 50px 0px;
@@ -127,27 +166,25 @@ input.radiusright{
     color: #E5D2BC;
 }
 
-div.information{
+div.information {
     color: #36312C;
     margin-top: 10px;
 }
+
 /*********************************/
 /*********four icons*************/
-.fourIcons
-{
+.fourIcons {
     display: flex;
     background-color: #36312C;
-    width: 100%;
-    height: 250px;
+    max-width: 100%;
+    min-height: 250px;
     text-align: center;
     flex-wrap: wrap;
     border-bottom: 5px solid #FF8619;
 
 }
 
-.fourIcons div
-
-{
+.fourIcons div {
     /*background-color: green;*/
     display: flex;
     margin: auto;
@@ -156,75 +193,74 @@ div.information{
     color: /*#FF8619*/ #E5D2BC;
 }
 
-.fourIcons div:hover{
+.fourIcons div:hover {
     color: #FF8619;
     font-size: 1.2em;
 }
 
-.fourIcons div i
-{
+.fourIcons div i {
     /*font-size:8em;*/
 }
 
-.fourIcons div span
-{
-    font-size:5em;
+.fourIcons div span {
+    font-size: 5em;
     padding: 3px;
 }
-.glyphicon {
+
+/*.glyphicon {
     position: inherit;
-}
+}*/
 /*********************************/
 /*********about authors***********/
 
-.author h1{
+.author h1 {
     font-weight: 800;
     font-size: 50px;
     color: #FF8619;
 }
 
-div.authors{
+div.authors {
     margin-top: 100px;
     margin-bottom: 100px;
     text-align: center;
 }
 
-div.author{
+div.author {
     display: inline-block;
     margin: 0px;
     margin-left: 20px;
 }
 
-div.icons{
+div.icons {
     display: inline-block;
     width: 30px;
     height: 369px;
 }
 
-.photo{
+.photo {
     width: 200px;
     height: 300px;
 }
 
-.icon{
+.icon {
     width: 20px;
     height: 20px;
     display: block;
     margin-top: 10px;
 }
 
-.icon:hover{
+.icon:hover {
     width: 30px;
     height: 30px;
 }
 
-.name{
+.name {
     color: #FF8619;
     font-weight: bold;
     font-size: 20px;
 }
 
-.function{
+.function {
     color: #36312C;
 }
 
