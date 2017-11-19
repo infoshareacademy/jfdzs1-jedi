@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<nav>
+<div>
     <nav class="navbar navbar-inverse wide">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -42,31 +42,8 @@
             </div>
         </div>
     </nav>
-</nav>
+</div>
 <a name="home"><!--(flag to home)--></a>
-<header>
-    <!--MARCI & MARCIN area -->
-    <!--LANDING PICTURE     -->
-    <div class="landing_picture">
-        <h1>Currency rates system</h1>
-        <h2>... wszystko o kursach walut</h2>
-        <h2>ale dużo więcej ...</h2>
-        <div>
-            <a href="#contact_form">
-                <button type="button"> sign in global premiere day !</button>
-            </a>
-        </div>
-    </div>
-    <!--/ MARCI & MARCIN area-->
-</header>
-<nav>
-    <img src="images/ctats_white_logo.png"/>
-    <!--<ul>-->
-    <!--<li><a href="#">O nas</a></li>-->
-    <!--<li><a href="#">Produkty</a></li>-->
-    <!--<li><a href="#">Kontakt</a></li>-->
-    <!--</ul>-->
-</nav>
 <header>
     <!--MARCI & MARCIN area -->
     <!--LANDING PICTURE     -->
@@ -118,7 +95,7 @@
             <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
             <h2>INFORMACJE</h2>
         </div>
-        <div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
             <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
             <h2>ANALIZY</h2>
         </div>
@@ -197,16 +174,15 @@
         </div>
     </div>
     <!--************Coming soon************-->
-        <div id="contact_form" class="comingsoon">
-            <h1>WKRÓTCE ZACZYNAMY</h1>
-            <h2>Jeżeli chcesz się dowiedzieć, kiedy otwieramy naszą stronę zapisz się poniżej</h2>
-            <form>
-                <input class="radiusleft" type="email" placeholder="Wpisz Swój adres e-mail">
-                <input class="radiusright" type="submit" value="Zapisz się">
-            </form>
-            <div class="information">
-                Twój e-mail zostanie wykorzystany jeden raz, wyłącznie do poinformowania Ciebie o otwarciu strony
-            </div>
+    <div id="contact_form" class="comingsoon">
+        <h1>WKRÓTCE ZACZYNAMY</h1>
+        <h2>Jeżeli chcesz się dowiedzieć, kiedy otwieramy naszą stronę zapisz się poniżej</h2>
+        <form action="https://formspree.io/pionier2000@wp.pl" method="POST">
+            <input class="radiusLeft" type="email" name="_replyto" placeholder="Wpisz Swój adres e-mail">
+            <input class="radiusRight" type="submit" value="Zapisz się">
+        </form>
+        <div class="information">
+            Twój e-mail zostanie wykorzystany jeden raz, wyłącznie do poinformowania Ciebie o otwarciu strony
         </div>
     <!--**********************************-->
     </main>
