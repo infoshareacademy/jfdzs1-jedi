@@ -131,8 +131,6 @@ button[type=button]:hover {
     margin: 2em;
     min-height: 70px;
 }
-<<<<<<< HEAD
-
 /***********Coming soon***********/
 
 .comingsoon {
@@ -173,8 +171,6 @@ div.information {
 }
 
 /*********************************/
-=======
->>>>>>> 108cdcba7c8c3ef09f6a4a9abb78372eb040f926
 /*********four icons*************/
 .fourIcons {
     display: flex;
