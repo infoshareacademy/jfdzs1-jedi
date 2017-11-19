@@ -1,7 +1,6 @@
 /* ------------ GLOBAL VAR ------------ */
 body{
     margin: 0;
-    width: 100%;
 }
 
 /* ------------ END GLOBAL VAR -------- */
@@ -80,45 +79,7 @@ button[type=button]:hover{
     margin: 2em;
     min-height: 70px;
 }
-/***********Coming soon***********/
 
-.comingsoon{
-    text-align: center;
-    margin-top: 15%;
-    width: 100%;
-    height: 50%;
-}
-
-.comingsoon h1{
-    font-weight: 800;
-    font-size: 50px;
-    color: #FF8619;
-}
-
-.comingsoon h2{
-    color: #36312C;
-}
-
-input.radiusleft{
-    height: 25px;
-    width: 250px;
-    text-align: center;
-    border-radius: 50px 0px 0px 50px;
-}
-
-input.radiusright{
-    height: 31px;
-    width: 100px;
-    border-radius: 0px 50px 50px 0px;
-    background: #FF8619;
-    color: #E5D2BC;
-}
-
-div.information{
-    color: #36312C;
-    margin-top: 10px;
-}
-/*********************************/
 /*********four icons*************/
 .fourIcons
 {
@@ -162,8 +123,8 @@ div.information{
 }
 
 div.authors{
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 20em;
+    margin-bottom: 20em;
     text-align: center;
 }
 
@@ -206,10 +167,49 @@ div.icons{
     color: #36312C;
 }
 
-.authorinfo {
+.authorInfo {
     text-align: center;
     display: inline-block;
     width: 200px;
 }
 
+/*********************************/
+/***********Coming soon***********/
+
+.comingsoon{
+    text-align: center;
+    margin: 20em auto;
+    width: 100%;
+    /*height: 50%;*/
+}
+
+.comingsoon h1{
+    font-weight: 800;
+    font-size: 50px;
+    color: #FF8619;
+}
+
+.comingsoon h2{
+    color: #36312C;
+}
+
+input.radiusLeft{
+    height: 25px;
+    width: 250px;
+    text-align: center;
+    border-radius: 50px 0px 0px 50px;
+}
+
+input.radiusRight{
+    height: 31px;
+    width: 100px;
+    border-radius: 0px 50px 50px 0px;
+    background: #FF8619;
+    color: #E5D2BC;
+}
+
+div.information{
+    color: #36312C;
+    margin-top: 10px;
+}
 /*********************************/
