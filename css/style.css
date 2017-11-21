@@ -185,7 +185,7 @@ div.authors{
 
 div.author {
     display: inline-block;
-    margin: 0px;
+    margin: 0;
     margin-left: 20px;
 }
 
@@ -231,40 +231,40 @@ div.icons {
 /*********************************/
 /***********Coming soon***********/
 
-.comingsoon{
-    text-align: center;
-    margin: 20em auto;
+.comingSoon{
+    margin: 10em auto;
     width: 100%;
-    /*height: 50%;*/
 }
 
-.comingsoon h1{
+.comingSoon h1{
     font-weight: 800;
     font-size: 50px;
     color: #FF8619;
+    margin: 5px auto;
 }
 
-.comingsoon h2{
-    color: #36312C;
-}
-
-input.radiusLeft{
-    height: 25px;
-    width: 250px;
-    text-align: center;
-    border-radius: 50px 0px 0px 50px;
-}
-
-input.radiusRight{
-    height: 31px;
-    width: 100px;
-    border-radius: 0px 50px 50px 0px;
-    background: #FF8619;
-    color: #E5D2BC;
-}
-
-div.information{
+.comingSoon h2{
     color: #36312C;
     margin-top: 10px;
+}
+
+.radiusLeft{
+    border-radius: 50px 0 0 50px;
+}
+
+.signUp{
+    border-radius: 0 50px 50px 0;
+    font-weight: bold;
+    background: #FF8619;
+    color: white;
+}
+
+.signUp:hover{
+    background: #FF8619;
+}
+
+div .information{
+    color: #36312C;
+    margin: 0.5em auto;
 }
 /*********************************/
