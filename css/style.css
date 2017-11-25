@@ -38,7 +38,9 @@ nav {
     display: inline-flex;
     margin-left: auto;
 }
-
+.navbar-inverse .navbar-nav>li>a{
+    width: 140px;
+}
 .navbar-inverse .navbar-nav > li > a:hover {
     color: #FF8619;
     font-size: 1.2em;
@@ -182,6 +184,10 @@ div.information {
     border-bottom: 5px solid #FF8619;
 
 }
+.row
+{
+    margin: 0;
+}
 
 .fourIcons div {
     /*background-color: green;*/
@@ -190,6 +196,7 @@ div.information {
     flex-direction: column;
     text-align: center;
     color: /*#FF8619*/ #E5D2BC;
+    height: 160px;
 }
 
 .fourIcons div:hover {
@@ -204,6 +211,11 @@ div.information {
 .fourIcons div span {
     font-size: 5em;
     padding: 3px;
+}
+@media screen and (max-width: 991px){
+    .fourIcons div{
+        margin-top: 30px;
+    }
 }
 
 /*.glyphicon {
