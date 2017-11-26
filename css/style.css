@@ -231,7 +231,7 @@ div.author {
     /*height: 200px;*/
     width: 200px;
     overflow: hidden;
-    cursor: context-menu;
+    cursor: default;
 }
 
 .card .back {
