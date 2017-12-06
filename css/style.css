@@ -11,7 +11,6 @@ nav {
     width: 100%;
     background-color: #36312C;
     color: #36312C;
-    position: fixed;
     border-bottom: 5px solid #FF8619;
     z-index: 1;
 }
@@ -19,6 +18,7 @@ nav {
 .navbar {
     margin: 0;
     min-height: 125px;
+    position: fixed;
 }
 
 .navbar-inverse {
@@ -38,7 +38,9 @@ nav {
     display: inline-flex;
     margin-left: auto;
 }
-
+.navbar-inverse .navbar-nav>li>a{
+    width: 140px;
+}
 .navbar-inverse .navbar-nav > li > a:hover {
     color: #FF8619;
     font-size: 1.2em;
@@ -131,46 +133,6 @@ button[type=button]:hover {
     margin: 2em;
     min-height: 70px;
 }
-/***********Coming soon***********/
-
-.comingsoon {
-    text-align: center;
-    margin-top: 15%;
-    width: 100%;
-    height: 50%;
-}
-
-.comingsoon h1 {
-    font-weight: 800;
-    font-size: 50px;
-    color: #FF8619;
-}
-
-.comingsoon h2 {
-    color: #36312C;
-}
-
-input.radiusleft {
-    height: 25px;
-    width: 250px;
-    text-align: center;
-    border-radius: 50px 0px 0px 50px;
-}
-
-input.radiusright {
-    height: 31px;
-    width: 100px;
-    border-radius: 0px 50px 50px 0px;
-    background: #FF8619;
-    color: #E5D2BC;
-}
-
-div.information {
-    color: #36312C;
-    margin-top: 10px;
-}
-
-/*********************************/
 /*********four icons*************/
 .fourIcons {
     display: flex;
@@ -182,6 +144,10 @@ div.information {
     border-bottom: 5px solid #FF8619;
 
 }
+.row
+{
+    margin: 0;
+}
 
 .fourIcons div {
     /*background-color: green;*/
@@ -190,6 +156,7 @@ div.information {
     flex-direction: column;
     text-align: center;
     color: /*#FF8619*/ #E5D2BC;
+    height: 160px;
 }
 
 .fourIcons div:hover {
@@ -205,6 +172,11 @@ div.information {
     font-size: 5em;
     padding: 3px;
 }
+@media screen and (max-width: 991px){
+    .fourIcons div{
+        margin-top: 30px;
+    }
+}
 
 /*.glyphicon {
     position: inherit;
@@ -212,45 +184,20 @@ div.information {
 /*********************************/
 /*********about authors***********/
 
-.author h1 {
+.authors h1 {
     font-weight: 800;
     font-size: 50px;
     color: #FF8619;
+    margin-bottom: 30px;
 }
 
-div.authors{
-    margin-top: 20em;
-    margin-bottom: 20em;
-    text-align: center;
+div.authors {
+    margin-top: 10em;
+    margin-bottom: 5em;
 }
 
 div.author {
-    display: inline-block;
-    margin: 0px;
-    margin-left: 20px;
-}
-
-div.icons {
-    display: inline-block;
-    width: 30px;
-    height: 369px;
-}
-
-.photo {
-    width: 200px;
-    height: 300px;
-}
-
-.icon {
-    width: 20px;
-    height: 20px;
-    display: block;
     margin-top: 10px;
-}
-
-.icon:hover {
-    width: 30px;
-    height: 30px;
 }
 
 .name {
@@ -263,10 +210,94 @@ div.icons {
     color: #36312C;
 }
 
-.authorinfo {
-    text-align: center;
-    display: inline-block;
+.card-container {
+    position: relative;
     width: 200px;
+    height: 200px;
+    margin-bottom: 5em;
+}
+
+.card {
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.card .side {
+    backface-visibility: hidden;
+    /*height: 200px;*/
+    width: 200px;
+    overflow: hidden;
+    cursor: default;
+}
+
+.card .back {
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.starW {
+    height: 100%;
+}
+
+.icon {
+    width: 30px;
+    margin: 10px;
+}
+
+.icon:hover {
+    width: 40px;
+    margin: 5px;
+}
+
+@media screen and (max-width: 991px){
+    .authors h1{
+        text-align: center;
+    }
+}
+
+/*********************************/
+/***********Coming soon***********/
+
+.comingSoon{
+    margin: 10em auto;
+}
+
+.comingSoon h1{
+    font-weight: 800;
+    font-size: 50px;
+    color: #FF8619;
+    margin: 5px auto;
+}
+
+.comingSoon h2{
+    color: #36312C;
+    margin-top: 10px;
+}
+
+.radiusLeft{
+    border-radius: 50px 0 0 50px;
+}
+
+.signUp{
+    border-radius: 0 50px 50px 0;
+    font-weight: bold;
+    background: #FF8619;
+    color: white;
+}
+
+.signUp:hover{
+    background: #FF8619;
+}
+
+div .information{
+    color: #36312C;
+    margin: 0.5em auto;
 }
 
 /*********************************/
