@@ -7,7 +7,6 @@ body {
 /* ------------ END GLOBAL VAR -------- */
 /*NAV*/
 nav {
-    /*max-height: 125px;*/
     width: 100%;
     background-color: #36312C;
     color: #36312C;
@@ -23,7 +22,6 @@ nav {
 
 .navbar-inverse {
     display: flex;
-
 }
 
 .container-fluid {
@@ -80,34 +78,45 @@ nav ul, li {
 }
 
 /* ------------ LANDING PICTURE ------- */
-.landing_picture {
-    clear: both;
-    /*margin: 1px 0 0 0;*/
+header{
+    padding-top: 125px;
+}
+.carousel-indicators{
+    width: auto;
+    margin: 0;
+}
+.carousel-inner .item img {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}
+.headword{
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 12px;
+    max-width: 40%;
+}
+.carousel-caption{
+    position: absolute;
+    top:80px;
     display: flex;
-    flex: 1;
-    width: 100%;
-    text-align: left;
     flex-direction: column;
-    background-image: url("../images/fs-banner.jpg");
-    background-size: cover;
 }
 
-.landing_picture img {
-    max-width: 100%;
-    height: 100%;
-
+@media screen and (min-width: 768px) {
+    .carousel-caption {
+        right: 5%;
+        left: 5%;
+        padding-bottom: 30px;
+    }
 }
 
 .landing_picture h1 {
-    padding: 10% 0 0 10%;
-    color: #36312C;
-    font-size: 400%;
+    color: #FFF;
+    font-size: 300%;
 }
 
 .landing_picture h2 {
-    margin: -1% 0 0 15%;
-    color: #36312C;
-    font-size: 270%;
+    color: #FFF;
+    font-size: 240%;
 }
 
 button[type=button] {
@@ -117,21 +126,23 @@ button[type=button] {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: larger;
+    font-size: x-large;
 }
 
 button[type=button]:hover {
     font-size: xx-large;
 }
 
-/*.landing_picture a{*/
-/*text-align: center;*/
-/*}*/
-
-.landing_picture div {
+.landing_picture div.landingButton {
     text-align: center;
-    margin: 2em;
+    margin: 4em;
     min-height: 70px;
+    display: flex;
+    flex-grow: 1;
+}
+.landing_picture div.landingButton a {
+    align-self: flex-end;
+    flex-grow: inherit;
 }
 /*********four icons*************/
 .fourIcons {
