@@ -10,7 +10,7 @@ nav {
     width: 100%;
     background-color: #36312C;
     color: #36312C;
-    border-bottom: 5px solid #FF8619;
+
     z-index: 1;
 }
 
@@ -22,6 +22,7 @@ nav {
 
 .navbar-inverse {
     display: flex;
+    border-bottom: 5px solid #FF8619;
 }
 
 .container-fluid {
@@ -84,6 +85,7 @@ header{
 .carousel-indicators{
     width: auto;
     margin: 0;
+    display: flex;
 }
 .carousel-inner .item img {
     width: -webkit-fill-available;
@@ -99,6 +101,7 @@ header{
     top:80px;
     display: flex;
     flex-direction: column;
+    right: 0%;
 }
 
 @media screen and (min-width: 768px) {
@@ -119,6 +122,23 @@ header{
     font-size: 240%;
 }
 
+@media screen and (max-width: 991px){
+    .landing_picture h2{
+        font-size: 120%;
+}
+    .landing_picture h1{
+        font-size: 150%;
+    }
+    .carousel-caption{
+        top:15px;
+    }
+    button[type=button]{
+        font-size: large;
+    }
+    .carousel-indicators{
+        display: none;
+    }
+}
 button[type=button] {
     background-color: #FF8619;
     color: white;
@@ -161,7 +181,6 @@ button[type=button]:hover {
 }
 
 .fourIcons div {
-    /*background-color: green;*/
     display: flex;
     margin: auto;
     flex-direction: column;
