@@ -8,18 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
-<body>
-<div>
+<body data-spy="scroll" data-target="#siteNavbar" data-offset="300">
+<div id="siteNavbar">
     <nav class="navbar navbar-inverse wide">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#home"><img src="images/ctats_white_logo.png"/></a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#team">O nas</a></li>
-                <li><a href="#">Produkty</a></li>
-                <li><a href="#contactForm">Kontakt</a></li>
+                <li><a href="#home" class="homeLink">Home</a></li>
+                <li><a href="#products" class="productsLink">Produkty</a></li>
+                <li><a href="#team" class="teamLink">O nas</a></li>
+                <li><a href="#contactForm" class="contactLink">Kontakt</a></li>
             </ul>
         </div>
     </nav>
@@ -33,18 +33,17 @@
                 </button>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#team">O nas</a></li>
-                        <li><a href="#">Produkty</a></li>
-                        <li><a href="#contactForm">Kontakt</a></li>
+                        <li><a href="#home" class="homeLink">Home</a></li>
+                        <li><a href="#products" class="productsLink">Produkty</a></li>
+                        <li><a href="#team" class="teamLink">O nas</a></li>
+                        <li><a href="#contactForm" class="contactLink">Kontakt</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
 </div>
-<a name="home"><!--(flag to home)--></a>
-<header>
+<header id="home">
     <!--MARCI & MARCIN area -->
     <!--LANDING PICTURE     -->
     <div class="landing_picture">
@@ -61,7 +60,7 @@
 </header>
 <!--MAIN                  -->
 <main>
-    <div class="fourIcons row">
+    <div id="products" class="fourIcons row">
         <div class="col-md-3 col-sm-6 col-xs-12">
             <!--<span class="glyphicon glyphicon-euro" aria-hidden="true"></span>-->
             <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
@@ -81,8 +80,7 @@
         </div>
     </div>
     <!--********about authors**********-->
-    <a name="team"><!--(flag to authors)--></a>
-    <div class="authors container">
+    <div id="team" class="authors container">
         <h1 class="col-xs-12">Autorzy:</h1>
         <div class="author col-xs-12 col-sm-6 col-md-3">
             <div class="authorInfo card-container center-block text-center">
@@ -170,24 +168,20 @@
         <div class="information col-xs-12">
             Twój e-mail zostanie wykorzystany jeden raz, wyłącznie do poinformowania Ciebie o otwarciu strony
         </div>
+    </div>
     <!--**********************************-->
-    </main>
+</main>
 <!--/ MAIN                -->
-    <footer>
+<footer>
 
-    </footer>
+</footer>
 
 <script src="lib/bootstrap/jquery.min.js"></script>
 <script src="lib/bootstrap/bootstrap.min.js"></script>
 <script>
     $('.signUp').on('click', function () {
         var $this = $(this);
-
         $this.button('loading');
-        setTimeout(function () {
-            $('#').modal('show')
-            $this.button('reset');
-        }, 1000);
     });
 </script>
 </body>

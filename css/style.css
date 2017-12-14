@@ -2,6 +2,7 @@
 body {
     margin: 0;
     width: 100%;
+    position: relative;
 }
 
 /* ------------ END GLOBAL VAR -------- */
@@ -12,7 +13,7 @@ nav {
     background-color: #36312C;
     color: #36312C;
     border-bottom: 5px solid #FF8619;
-    z-index: 1;
+    z-index: 99999999;
 }
 
 .navbar {
@@ -23,7 +24,6 @@ nav {
 
 .navbar-inverse {
     display: flex;
-
 }
 
 .container-fluid {
@@ -37,17 +37,39 @@ nav {
     align-items: center;
     display: inline-flex;
     margin-left: auto;
+    margin-right: 10px;
 }
 .navbar-inverse .navbar-nav>li>a{
-    width: 140px;
+    /*width: 140px;*/
 }
 .navbar-inverse .navbar-nav > li > a:hover {
     color: #FF8619;
-    font-size: 1.2em;
+    font-size: xx-large;
+    margin: 0 0;
+}
+
+.nav>li>a{
+    padding: 10px 10px;
+}
+
+.homeLink{
+    margin: 0 10.5px;
+}
+
+.productsLink{
+    margin: 0 16px;
+}
+
+.teamLink{
+    margin: 0 11px;
+}
+
+.contactLink{
+    margin: 0 15px;
 }
 
 nav img {
-    max-height: 500%;
+    max-height: 480%;
 }
 
 nav ul, li {
@@ -58,10 +80,21 @@ nav ul, li {
     white-space: nowrap;
 }
 
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+    background-color: transparent;
+    border-bottom: solid #FF8619;
+    font-size: x-large;
+    margin: 0 0;
+}
+
 @media screen and (min-width: 768px) {
     .rwd {
         display: none;
         background-color: #4cae4c;
+    }
+
+    .navbar {
+        border-radius: 0;
     }
 }
 
