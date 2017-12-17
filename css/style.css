@@ -8,12 +8,11 @@ body {
 /* ------------ END GLOBAL VAR -------- */
 /*NAV*/
 nav {
-    /*max-height: 125px;*/
     width: 100%;
     background-color: #36312C;
     color: #36312C;
-    border-bottom: 5px solid #FF8619;
-    z-index: 99999999;
+
+    z-index: 1;
 }
 
 .navbar {
@@ -24,6 +23,7 @@ nav {
 
 .navbar-inverse {
     display: flex;
+    border-bottom: 5px solid #FF8619;
 }
 
 .container-fluid {
@@ -113,36 +113,66 @@ nav ul, li {
 }
 
 /* ------------ LANDING PICTURE ------- */
-.landing_picture {
-    clear: both;
-    /*margin: 1px 0 0 0;*/
+header{
+    padding-top: 125px;
+}
+.carousel-indicators{
+    width: auto;
+    margin: 0;
     display: flex;
-    flex: 1;
-    width: 100%;
-    text-align: left;
+}
+.carousel-inner .item img {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}
+.headword{
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 12px;
+    max-width: 40%;
+}
+.carousel-caption{
+    position: absolute;
+    top:80px;
+    display: flex;
     flex-direction: column;
-    background-image: url("../images/fs-banner.jpg");
-    background-size: cover;
+    right: 0%;
 }
 
-.landing_picture img {
-    max-width: 100%;
-    height: 100%;
-
+@media screen and (min-width: 768px) {
+    .carousel-caption {
+        right: 5%;
+        left: 5%;
+        padding-bottom: 30px;
+    }
 }
 
 .landing_picture h1 {
-    padding: 10% 0 0 10%;
-    color: #36312C;
-    font-size: 400%;
+    color: #FFF;
+    font-size: 300%;
 }
 
 .landing_picture h2 {
-    margin: -1% 0 0 15%;
-    color: #36312C;
-    font-size: 270%;
+    color: #FFF;
+    font-size: 240%;
 }
 
+@media screen and (max-width: 991px){
+    .landing_picture h2{
+        font-size: 120%;
+}
+    .landing_picture h1{
+        font-size: 150%;
+    }
+    .carousel-caption{
+        top:15px;
+    }
+    button[type=button]{
+        font-size: large;
+    }
+    .carousel-indicators{
+        display: none;
+    }
+}
 button[type=button] {
     background-color: #FF8619;
     color: white;
@@ -150,21 +180,23 @@ button[type=button] {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: larger;
+    font-size: x-large;
 }
 
 button[type=button]:hover {
     font-size: xx-large;
 }
 
-/*.landing_picture a{*/
-/*text-align: center;*/
-/*}*/
-
-.landing_picture div {
+.landing_picture div.landingButton {
     text-align: center;
-    margin: 2em;
+    margin: 4em;
     min-height: 70px;
+    display: flex;
+    flex-grow: 1;
+}
+.landing_picture div.landingButton a {
+    align-self: flex-end;
+    flex-grow: inherit;
 }
 /*********four icons*************/
 .fourIcons {
@@ -183,7 +215,6 @@ button[type=button]:hover {
 }
 
 .fourIcons div {
-    /*background-color: green;*/
     display: flex;
     margin: auto;
     flex-direction: column;
