@@ -340,7 +340,7 @@ div.author {
 }
 
 .comingSoon h2{
-    color: #36312C;
+    color:#E5D2BC /*white*/;
     margin-top: 10px;
 }
 
@@ -360,8 +360,11 @@ div.author {
 }
 
 div .information{
-    color: #36312C;
+    color:#E5D2BC /*white*/;
     margin: 0.5em auto;
 }
-
 /*********************************/
+.darkBackground{
+    background-color: #36312C;
+    border-top: 5px solid #FF8619;
+}
