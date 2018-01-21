@@ -12,7 +12,7 @@ nav {
     background-color: #36312C;
     color: #36312C;
 
-    z-index: 1;
+    z-index: 99;
 }
 
 .navbar {
@@ -370,10 +370,9 @@ footer {
     border-top: 5px solid #FF8619;
     min-height: 125px;
     color: #E5D2BC;
+    justify-content: flex-end;
 }
 
 footer h3{
-    width: 100%;
-    text-align: right;
     align-self: flex-end;
 }
