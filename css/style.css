@@ -340,7 +340,7 @@ div.author {
 }
 
 .comingSoon h2{
-    color:#E5D2BC /*white*/;
+    color: #36312C;
     margin-top: 10px;
 }
 
@@ -360,11 +360,20 @@ div.author {
 }
 
 div .information{
-    color:#E5D2BC /*white*/;
+    color:#36312C;
     margin: 0.5em auto;
 }
 /*********************************/
-.darkBackground{
-    background-color: #36312C;
+footer {
+    display: flex;
+    background-color: #080808;
     border-top: 5px solid #FF8619;
+    min-height: 125px;
+    color: #E5D2BC;
+}
+
+footer h3{
+    width: 100%;
+    text-align: right;
+    align-self: flex-end;
 }
