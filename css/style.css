@@ -376,3 +376,34 @@ footer {
 footer h3{
     align-self: flex-end;
 }
+
+#moreInfo{
+    background-color: ghostwhite /*#36312C*/;
+    display: flex;
+    flex-wrap: wrap;
+    color: /*#D5C2CC*/ #36312C ;
+    font-size: large;
+    text-align: center;
+    padding: 50px;
+}
+
+#moreInfo .glyphicon{
+    font-size: 5em;
+}
+#moreInfo h2{
+    height: 70px;
+    width: fit-content;
+    margin: auto;
+    border-bottom: solid #FF8619;
+}
+#moreInfo div{
+    margin-top: 20px;
+}
+#moreInfo div p{
+    text-align: justify;
+    margin-top: 20px;
+}
+
+#moreInfo div span:hover{
+    color: #FF8619
+}
