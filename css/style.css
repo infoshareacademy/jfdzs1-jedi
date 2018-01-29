@@ -381,7 +381,7 @@ footer h3{
     background-color: ghostwhite /*#36312C*/;
     display: flex;
     flex-wrap: wrap;
-    color: /*#D5C2CC*/ #36312C ;
+    color: #36312C ;
     font-size: large;
     text-align: center;
     padding: 50px;
@@ -443,4 +443,3 @@ footer h3{
     -ms-transform: translate(0px, 0px);
     transform: translate3d(0px, 0px, 0px);
 }
-
