@@ -56,12 +56,16 @@ nav {
     margin: 0 10.5px;
 }
 
-.productsLink{
-    margin: 0 16px;
+.infoLink{
+    margin: 0 20.5px;
 }
 
 .teamLink{
     margin: 0 11px;
+}
+
+.productsLink{
+    margin: 0 16px;
 }
 
 .contactLink{
@@ -228,10 +232,6 @@ button[type=button]:hover {
     font-size: 1.2em;
 }
 
-.fourIcons div i {
-    /*font-size:8em;*/
-}
-
 .fourIcons div span {
     font-size: 5em;
     padding: 3px;
@@ -283,16 +283,11 @@ div.author {
 
 .card {
     transform-style: preserve-3d;
-    transition: all 1s ease-in-out;
-}
-
-.card:hover {
-    transform: rotateY(180deg);
+    transition: transform 1s;
 }
 
 .card .side {
     backface-visibility: hidden;
-    /*height: 200px;*/
     width: 200px;
     overflow: hidden;
     cursor: default;
@@ -326,7 +321,7 @@ div.author {
 }
 
 /*********************************/
-/***********Coming soon***********/
+/***********coming soon***********/
 
 .comingSoon{
     margin: 10em auto;
@@ -363,7 +358,41 @@ div .information{
     color:#36312C;
     margin: 0.5em auto;
 }
+
 /*********************************/
+/***********home button***********/
+
+#homeLink{
+    display: none;
+}
+
+#homeButton{
+    position: fixed;
+    bottom: 38px;
+    right: 10px;
+    width: 75px;
+    height: 75px;
+    background: white;
+    border: 5px solid #FF8619;
+    border-radius: 50%;
+    opacity: 0.5;
+    text-align: center;
+}
+
+#homeButton:hover{
+    opacity: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#homeButton .glyphicon-home {
+    margin-top: 7px;
+    font-size: 45px;
+    color: #36312C;
+}
+
+/*********************************/
+/*************footer**************/
+
 footer {
     display: flex;
     background-color: #080808;
@@ -375,6 +404,7 @@ footer {
 
 footer h3{
     align-self: flex-end;
+    margin-right: 10px;
 }
 
 #moreInfo{
@@ -410,7 +440,6 @@ footer h3{
 #moreInfo div:hover{
     background-color: #fff;
 }
-
 
 .animation-element {
     opacity: 0;

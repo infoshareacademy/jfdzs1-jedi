@@ -25,3 +25,52 @@ function check_if_in_view() {
 
 $window.trigger('scroll');
 $window.on('scroll resize', check_if_in_view);
+
+
+// Check if element is visible on viewport
+var $cardClass = $('.card');
+var $homeLinkId = $('#homeLink');
+var $teamId = $("#team");
+
+window.onscroll = function scrollFunction() {
+    if (firtScrollToFlipCard) {
+        if (document.body.scrollTop >= $teamId.offset().top - 500) {
+            $cardClass.css('transform', 'rotateY(180deg)');
+            firstAutorsFlip();
+        }
+    }
+    if (document.body.scrollTop > 200) {
+        $homeLinkId.show();
+    } else {
+        $homeLinkId.hide();
+    }
+};
+
+// rotation autors name as they apper first time on the screen
+
+function firstAutorsFlip() {
+    var cardId;
+    var i = 1;
+    var temeTimeout = setTimeout(function () {
+        var timeInterval = setInterval(function () {
+            cardId = '#authorName' + i;
+            $(cardId).css('transform', 'rotateY(0deg)');
+            i++;
+            if (i === 5) {
+                clearTimeout(temeTimeout);
+                clearTimeout(timeInterval);
+                firtScrollToFlipCard = 0;
+            }
+        }, 300);
+    }, 400)
+}
+
+// about authors animations
+
+var firtScrollToFlipCard = 1;
+
+$cardClass.hover(function () {
+    $(this).css('transform', 'rotateY(180deg)');
+}, function () {
+    $(this).css('transform', 'rotateY(0deg)');
+});
