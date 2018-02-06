@@ -11,7 +11,6 @@ nav {
     width: 100%;
     background-color: #36312C;
     color: #36312C;
-
     z-index: 99;
 }
 
@@ -39,37 +38,35 @@ nav {
     margin-left: auto;
     margin-right: 10px;
 }
-.navbar-inverse .navbar-nav>li>a{
-    /*width: 140px;*/
-}
+
 .navbar-inverse .navbar-nav > li > a:hover {
     color: #FF8619;
-    font-size: xx-large;
+    font-size: 30px;
     margin: 0 0;
 }
 
-.nav>li>a{
+.nav > li > a {
     padding: 10px 10px;
 }
 
-.homeLink{
-    margin: 0 10.5px;
+.homeLink {
+    margin: 0 7.5px;
 }
 
-.infoLink{
-    margin: 0 20.5px;
+.infoLink {
+    margin: 0 13.5px;
 }
 
-.teamLink{
+.teamLink {
+    margin: 0 7px;
+}
+
+.productsLink {
     margin: 0 11px;
 }
 
-.productsLink{
-    margin: 0 16px;
-}
-
-.contactLink{
-    margin: 0 15px;
+.contactLink {
+    margin: 0 10px;
 }
 
 nav img {
@@ -79,19 +76,58 @@ nav img {
 nav ul, li {
     display: block;
     float: right;
-    font-size: x-large;
+    font-size: 25px;
     font-weight: 700;
     white-space: nowrap;
 }
 
-.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
     background-color: transparent;
     border-bottom: solid #FF8619;
-    font-size: x-large;
+    font-size: 25px;
     margin: 0 0;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) and (max-width: 930px) {
+    nav ul, li {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+        font-size: 18px;
+    }
+
+    .navbar-inverse .navbar-nav > li > a:hover {
+        font-size: 20px;
+    }
+
+    .homeLink {
+        margin: 0 1px;
+    }
+
+    .infoLink {
+        margin: 0 3px;
+    }
+
+    .teamLink {
+        margin: 0 3px;
+    }
+
+    .productsLink {
+        margin: 0 3.5px;
+    }
+
+    .contactLink {
+        margin: 0 3.5px;
+    }
+
+    .gameLink {
+        margin: 0 2px;
+    }
+}
+
+@media screen and (min-width: 769px) {
     .rwd {
         display: none;
         background-color: #4cae4c;
@@ -114,29 +150,55 @@ nav ul, li {
     .navbar-header {
         min-width: 100%;
     }
+
+    .navbar-inverse .navbar-nav > li > a {
+        width: 160px
+    }
+}
+
+.bar1, .bar2, .bar3 {
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: rotate(-45deg) translate(-5.5px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: rotate(45deg) translate(-5.5px, -6px);
 }
 
 /* ------------ LANDING PICTURE ------- */
-header{
+header {
     padding-top: 125px;
 }
-.carousel-indicators{
+
+.carousel-indicators {
     width: auto;
     margin: 0;
     display: flex;
 }
+
 .carousel-inner .item img {
     width: -webkit-fill-available;
     height: -webkit-fill-available;
 }
-.headword{
-    background-color: rgba(0,0,0,0.2);
+
+.headword {
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     max-width: 40%;
 }
-.carousel-caption{
+
+.carousel-caption {
     position: absolute;
-    top:80px;
+    top: 80px;
     display: flex;
     flex-direction: column;
     right: 0%;
@@ -160,23 +222,28 @@ header{
     font-size: 240%;
 }
 
-@media screen and (max-width: 991px){
-    .landing_picture h2{
+@media screen and (max-width: 991px) {
+    .landing_picture h2 {
         font-size: 120%;
-}
-    .landing_picture h1{
+    }
+
+    .landing_picture h1 {
         font-size: 150%;
     }
-    .carousel-caption{
-        top:15px;
+
+    .carousel-caption {
+        top: 15px;
     }
-    button[type=button]{
+
+    button[type=button] {
         font-size: large;
     }
-    .carousel-indicators{
+
+    .carousel-indicators {
         display: none;
     }
 }
+
 button[type=button] {
     background-color: #FF8619;
     color: white;
@@ -198,10 +265,12 @@ button[type=button]:hover {
     display: flex;
     flex-grow: 1;
 }
+
 .landing_picture div.landingButton a {
     align-self: flex-end;
     flex-grow: inherit;
 }
+
 /*********four icons*************/
 .fourIcons {
     display: flex;
@@ -211,10 +280,9 @@ button[type=button]:hover {
     text-align: center;
     flex-wrap: wrap;
     border-bottom: 5px solid #FF8619;
-
 }
-.row
-{
+
+.row {
     margin: 0;
 }
 
@@ -236,8 +304,9 @@ button[type=button]:hover {
     font-size: 5em;
     padding: 3px;
 }
-@media screen and (max-width: 991px){
-    .fourIcons div{
+
+@media screen and (max-width: 991px) {
+    .fourIcons div {
         margin-top: 30px;
     }
 }
@@ -314,8 +383,8 @@ div.author {
     margin: 5px;
 }
 
-@media screen and (max-width: 991px){
-    .authors h1{
+@media screen and (max-width: 991px) {
+    .authors h1 {
         text-align: center;
     }
 }
@@ -323,50 +392,50 @@ div.author {
 /*********************************/
 /***********coming soon***********/
 
-.comingSoon{
+.comingSoon {
     margin: 10em auto;
 }
 
-.comingSoon h1{
+.comingSoon h1 {
     font-weight: 800;
     font-size: 50px;
     color: #FF8619;
     margin: 5px auto;
 }
 
-.comingSoon h2{
+.comingSoon h2 {
     color: #36312C;
     margin-top: 10px;
 }
 
-.radiusLeft{
+.radiusLeft {
     border-radius: 50px 0 0 50px;
 }
 
-.signUp{
+.signUp {
     border-radius: 0 50px 50px 0;
     font-weight: bold;
     background: #FF8619;
     color: white;
 }
 
-.signUp:hover{
+.signUp:hover {
     background: #FF8619;
 }
 
-div .information{
-    color:#36312C;
+div .information {
+    color: #36312C;
     margin: 0.5em auto;
 }
 
 /*********************************/
 /***********home button***********/
 
-#homeLink{
+#homeLink {
     display: none;
 }
 
-#homeButton{
+#homeButton {
     position: fixed;
     bottom: 38px;
     right: 10px;
@@ -379,7 +448,7 @@ div .information{
     text-align: center;
 }
 
-#homeButton:hover{
+#homeButton:hover {
     opacity: 1;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -402,42 +471,45 @@ footer {
     justify-content: flex-end;
 }
 
-footer h3{
+footer h3 {
     align-self: flex-end;
     margin-right: 10px;
 }
 
-#moreInfo{
+#moreInfo {
     background-color: ghostwhite /*#36312C*/;
     display: flex;
     flex-wrap: wrap;
-    color: #36312C ;
+    color: #36312C;
     font-size: large;
     text-align: center;
     padding: 50px;
 }
 
-#moreInfo .glyphicon{
+#moreInfo .glyphicon {
     font-size: 5em;
 }
-#moreInfo h2{
+
+#moreInfo h2 {
     height: 70px;
     width: fit-content;
     margin: auto;
-    /*border-bottom: solid #FF8619;*/
 }
-#moreInfo div .col-md-3{
+
+#moreInfo div .col-md-3 {
     margin-top: 20px;
 }
-#moreInfo div p{
+
+#moreInfo div p {
     text-align: justify;
     margin-top: 20px;
 }
 
-#moreInfo div span:hover{
+#moreInfo div span:hover {
     color: #FF8619
 }
-#moreInfo div:hover{
+
+#moreInfo div:hover {
     background-color: #fff;
 }
 

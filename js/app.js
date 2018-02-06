@@ -14,3 +14,7 @@ $(".links").click(function () {
     }, 800)
 });
 
+function myFunction(x) {
+    x.classList.toggle("change");
+};
+
