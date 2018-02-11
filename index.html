@@ -5,6 +5,7 @@
     <title>CRATS</title>
     <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/game%20style.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -28,7 +29,8 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand links" href="#home"><img src="images/ctats_white_logo.png"/></a>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" onclick="myFunction(this)">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
+                        onclick="myFunction(this)">
                     <span class="icon-bar bar1"></span>
                     <span class="icon-bar bar2"></span>
                     <span class="icon-bar bar3"></span>
@@ -304,6 +306,47 @@
     </div>
     <!--**********************************-->
 
+    <!--****************Game**************-->
+    <div id="gamePlace" class="container">
+        <div class="row">
+            <div id="menu" class="col-xs-12 col-md-4 col-md-push-8">
+                <div id="result">
+                    <h2>Runda <span id="level"></span></h2>
+                    <h2>Punkty: <span id="gameScore">0</span></h2>
+                    <h2>Czas: <span id="timeToEnd">0:30</span></h2>
+                </div>
+                <div id="hardLevelNavigation">
+                    <form>
+                        <h3>
+                            <label>Poziom trudności:</label>
+                        </h3>
+                        <h4>
+                            <label>
+                                <input type="radio" name="difficultyLevel" value="9" checked>Łatwy
+                            </label>
+                            <label>
+                                <input type="radio" name="difficultyLevel" value="16">Średni
+                            </label>
+                            <label>
+                                <input type="radio" name="difficultyLevel" value="25">Trudny
+                            </label>
+                        </h4>
+                    </form>
+                    <div>
+                        <button id="play" type="button" class="btn btn-info">Graj</button>
+                        <button id="stop" type="button" class="btn btn-info" disabled>Zakończ grę</button>
+                    </div>
+                </div>
+            </div>
+            <div id="game" class="col-xs-12 col-md-8 col-md-pull-4">
+                <div id="coverRound" class="col-xs-12">
+                    <h1 id="roundText"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--**********************************-->
+
 </main>
 <!--/ MAIN                -->
 
@@ -320,6 +363,7 @@
 <script src="lib/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script src="js/animate.js"></script>
+<script src="js/game.js"></script>
 <script type="text/javascript" src="js/cookies.js"></script>
 </body>
 </html>

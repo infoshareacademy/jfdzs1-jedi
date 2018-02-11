@@ -1,0 +1,151 @@
+#gamePlace{
+    margin-bottom: 50px;
+}
+
+.playArea {
+    border: 1px solid #949494;
+    cursor: pointer;
+    background: url("../images/open.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    perspective: 1500px;
+}
+
+.safeDoor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: 0.4s transform linear;
+}
+
+.coin {
+    position: absolute;
+    height: 80%;
+    margin: auto auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+}
+
+.thief {
+    position: absolute;
+    height: 92%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+.active {
+    z-index: 4;
+}
+
+
+#game {
+    height: 70vh;
+}
+
+@media screen and (max-width: 992px) {
+    #menu {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #result {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #hardLevelNavigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+#coverRound {
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 1%;
+    height: 98%;
+    width: 94%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coverRoundShow {
+    border: 2px solid #FF8619;
+    border-radius: 20px;
+}
+
+#roundText {
+    display: none;
+    font-size: 9em;
+    font-weight: bold;
+    text-align: center;
+    color: #FF8619;
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.instructionBackground{
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+#instructionHeader{
+    font-size: 0.5em;
+    text-align: center;
+}
+
+.instructionPoint{
+    color: white;
+    font-size: 0.25em;
+    margin: 0.3em 0;
+}
+
+.instructionPointText{
+    color: #E5D2BC;
+}
+
+.instructionImgMouse{
+    height: 12vh;
+}
+
+#instructionImgCoin{
+    width: 10%;
+}
+
+#instructionImgThief{
+    width: 11%;
+}
+
+#instructionCloseButton{
+    color: white;
+    background-color: #FF8619;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+#endGameText {
+    color: #FF8619;
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.5);;
+    font-size: 0.6em;
+}
+
+#endGameScoreText {
+    color: #E5D2BC;
+    font-size: 0.5em;
+}
+
