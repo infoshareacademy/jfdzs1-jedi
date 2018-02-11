@@ -1,5 +1,6 @@
 var $animation_elements = $('.animation-element');
 var $window = $(window);
+var firtScrollToFlipCard = 1;
 
 
 function check_if_in_view() {
@@ -20,31 +21,34 @@ function check_if_in_view() {
         } else {
             $element.removeClass('in-view');
         }
-    });
+
+        var $cardClass = $('.card');
+        var $homeLinkId = $('#homeLink');
+        var $teamId = $("#team");
+
+        if (window_top_position > 200) {
+            $($homeLinkId).show();
+        }
+        else{
+            $($homeLinkId).hide();
+        }
+
+        // Check if element is visible on viewport
+        if (firtScrollToFlipCard) {
+            if (window_top_position >= $($teamId).offset().top - 500) {
+                $cardClass.css('transform', 'rotateY(180deg)');
+                firstAutorsFlip();
+            }
+        }
+
+    })
 }
 
 $window.trigger('scroll');
 $window.on('scroll resize', check_if_in_view);
 
 
-// Check if element is visible on viewport
 var $cardClass = $('.card');
-var $homeLinkId = $('#homeLink');
-var $teamId = $("#team");
-
-window.onscroll = function scrollFunction() {
-    if (firtScrollToFlipCard) {
-        if (document.body.scrollTop >= $teamId.offset().top - 500) {
-            $cardClass.css('transform', 'rotateY(180deg)');
-            firstAutorsFlip();
-        }
-    }
-    if (document.body.scrollTop > 200) {
-        $homeLinkId.show();
-    } else {
-        $homeLinkId.hide();
-    }
-};
 
 // rotation autors name as they apper first time on the screen
 
