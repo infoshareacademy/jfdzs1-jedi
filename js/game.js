@@ -122,7 +122,6 @@ function CreateGame() {
         }
         createGameArea();
     });
-
     showInstruction();
     $('#play').click(counter);
     $('#stop').click(stopGame);
@@ -216,10 +215,29 @@ function CreateGame() {
     }
 
     function showResult() {
-        $('#roundText').show().html("<div id='endGameText'>KONIEC GRY</div><div id='endGameScoreText'>Twój wynik: " + score + "</div>");
+        let scoreToTable = score;
+        $('#roundText').show().html("<div id='endGameText'>KONIEC GRY</div><div id='endGameScoreText'>Twój wynik: " + score + "</div>" +
+            "   <button id='scoreTableButton' class='btn btn-default center-block'>Lista wyników</button>");
         $('#coverRound').show();
         $('#coverRound').addClass('instructionBackground');
         $('#coverRound').addClass('coverRoundShow');
+        $('#scoreTableButton').click(function () {
+            let level;
+            switch (levelL) {
+                case 9:
+                    level = "easyLevel";
+                    break;
+                case 16:
+                    level = "midLevel";
+                    break;
+                case 25:
+                    level = "hardLevel";
+                    break;
+                default:
+                    level = "easyLevel";
+            }
+            showScoreList(scoreToTable, level);
+        });
     }
 
     function counter() {
@@ -296,8 +314,84 @@ function CreateGame() {
         $('#coverRound').hide();
         $('#play').removeAttr('disabled');
         $difficultyLevelChecked.removeAttr('disabled');
-    })
+    });
 
+    function showScoreList(score, level) {
+        $('#play').attr('disabled', 'disabled');
+        $('#stop').attr('disabled', 'disabled');
+        $difficultyLevelChecked.attr('disabled', 'disabled');
+        $('#roundText').css('text-align', 'left');
+        $('#roundText').show().html("<div id='scoreTableHeader'>TWOJE WYNIKI: </div>" +
+            "<div class='container-fluid'>" +
+            "   <div class='scoreTablePoint col-xs-4'>łatwy: " +
+            "       <ol id='easyLevel'>" +
+            "       </ol>" +
+            "   </div>" +
+            "   <div class='scoreTablePoint col-xs-4'>średni: " +
+            "       <ol id='midLevel'>" +
+            "       </ol>" +
+            "   </div>" +
+            "   <div class='scoreTablePoint col-xs-4'>trudny: " +
+            "       <ol id='hardLevel'>" +
+            "       </ol>" +
+            "   </div>" +
+            "</div>" +
+            "<div>" +
+            "   <button id='scoreTableRetryButton' class='btn btn-default center-block'>Zagraj ponownie</button>" +
+            "</div>");
+        $('#coverRound').addClass('scoreTableBackground');
+        $('#coverRound').addClass('coverRoundShow');
+        $('#play').removeAttr('disabled');
+        $difficultyLevelChecked.removeAttr('disabled');
+
+        $('#scoreTableRetryButton').click(function () {
+            $('#coverRound').hide();
+            // $('#play').removeAttr('disabled');
+            $difficultyLevelChecked.removeAttr('disabled');
+            setTimeout(counter(), 3000)
+        });
+
+        mangingScoreList(score, level);
+    }
+
+    function checkScore(score, level) {
+        let levelArray = ["easyLevel", "midLevel", "hardLevel"],
+            scoreArray,
+            zerosArray;
+
+        for (let i = 0; i < levelArray.length; i++) {
+            if (WHReadCookie(levelArray[i]) === null) {
+                zerosArray = ["0", "0", "0", "0", "0"];
+                WHCreateCookie(levelArray[i], zerosArray, 14);
+            }
+        }
+
+        scoreArray = WHReadCookie(level).split(",");
+
+        for (let j = 0; j < scoreArray.length; j++) {
+            if (score > parseFloat(scoreArray[j])) {
+                scoreArray.splice(j, 0, score.toString());
+                if (scoreArray.length > 5) {
+                    scoreArray.pop();
+                }
+                break
+            }
+        }
+        WHCreateCookie(level, scoreArray, 14);
+        return scoreArray
+    }
+
+    function mangingScoreList(score, level, levelArray = ["easyLevel", "midLevel", "hardLevel"]) {
+        checkScore(score, level);
+        for (i = 0; i < levelArray.length; i++) {
+            let list = WHReadCookie(levelArray[i]).split(",");
+            $('#' + levelArray[i]).empty();
+            for (let j = 0; j < list.length; j++) {
+                let template = '<li>' + list[j] + '</li>';
+                $('#' + levelArray[i]).append(template);
+            }
+        }
+    }
 }
 
 var game = new CreateGame();
