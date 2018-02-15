@@ -1,4 +1,4 @@
-#gamePlace{
+#gamePlace {
     margin-bottom: 50px;
 }
 
@@ -48,7 +48,6 @@
 .active {
     z-index: 4;
 }
-
 
 #game {
     height: 70vh;
@@ -100,39 +99,40 @@
     text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
 }
 
-.instructionBackground{
+.instructionBackground {
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-#instructionHeader{
+#instructionHeader {
     font-size: 0.5em;
     text-align: center;
 }
 
-.instructionPoint{
+.instructionPoint, .scoreTablePoint {
     color: white;
     font-size: 0.25em;
     margin: 0.3em 0;
+    text-align: center;
 }
 
-.instructionPointText{
+.instructionPointText {
     color: #E5D2BC;
 }
 
-.instructionImgMouse{
+.instructionImgMouse {
     height: 12vh;
 }
 
-#instructionImgCoin{
+#instructionImgCoin {
     width: 10%;
 }
 
-#instructionImgThief{
+#instructionImgThief {
     width: 11%;
 }
 
-#instructionCloseButton{
+#instructionCloseButton, #scoreTableRetryButton, #scoreTableButton {
     color: white;
     background-color: #FF8619;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
@@ -149,3 +149,23 @@
     font-size: 0.5em;
 }
 
+#scoreTableHeader {
+    font-size: 0.5em;
+    text-align: center;
+    margin-top: 1vh;
+}
+
+.scoreTableBackground {
+    display: flex;
+    justify-content: center;
+    background-color: #1b6d85;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.scoreTablePoint li {
+    float: none;
+    font-size: xx-large;
+    display: flex;
+}
