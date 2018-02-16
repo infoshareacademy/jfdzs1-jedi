@@ -339,14 +339,14 @@
                     <div id="menuButtons" class="col-xs-12">
                         <div>
                             <button id="play" class="btn col-xs-5 col-md-12 gameButtons gameButtonsMenu">Graj</button>
-                            <button id="stop" class="btn col-xs-5 col-md-12 gameButtons gameButtonsMenu" disabled>Zakończ
+                            <button id="stop" class="btn col-xs-5 col-md-12 gameButtons gameButtonsMenu" disabled>
+                                Zakończ
                                 grę
                             </button>
                         </div>
                         <div>
                             <button id="rankingButton" class="btn col-xs-5 col-md-12 gameButtons gameButtonsMenu">
-                                Ranking
-                                wyników
+                                Lista wyników
                             </button>
                             <button id="instructionButton" class="btn col-xs-5 col-md-12 gameButtons gameButtonsMenu">
                                 Instrukcja gry
@@ -357,7 +357,7 @@
             </div>
             <div id="game" class="col-xs-12 col-md-8 col-md-pull-4">
                 <div id="coverRound" class="col-xs-12">
-                    <h1 id="roundText"></h1>
+                    <div id="roundText"></div>
                     <div id="gameInstruction">
                         <div id='instructionHeader'>INSTRUKCJA GRY</div>
                         <div class='instructionPoint'>CEL GRY:
@@ -384,7 +384,29 @@
                     <div id="gameEnd" class="text-center">
                         <div id='endGameText'>KONIEC GRY</div>
                         <div id='endGameScoreText'></div>
-                        <button id='gameEndCloseButton' class='btn center-block gameButtons'>Zamknij</button>
+                            <button id='gameEndCloseButton' class='btn gameButtons center-block'>Zamknij</button>
+                            <button id='scoreTableButton' class='btn gameButtons center-block'>Lista wyników</button>
+                    </div>
+                    <div id="scores">
+                        <div id='scoreTableHeader'>TWOJE WYNIKI:</div>
+                        <div class='container-fluid'>
+                            <div class='scoreTablePoint col-xs-4'>Łatwy:
+                                <ol id='easyLevel'>
+                                </ol>
+                            </div>
+                            <div class='scoreTablePoint col-xs-4'>Średni:
+                                <ol id='midLevel'>
+                                </ol>
+                            </div>
+                            <div class='scoreTablePoint col-xs-4'>Trudny:
+                                <ol id='hardLevel'>
+                                </ol>
+                            </div>
+                        </div>
+                        <div>
+                            <button id='scoreTableRetryButton' class='btn center-block gameButtons'>Zamknij
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

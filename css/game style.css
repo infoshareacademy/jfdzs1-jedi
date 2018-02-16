@@ -108,6 +108,10 @@
     }
 }
 
+#result h2{
+    cursor: context-menu;
+}
+
 label{
     font-family: inherit;
     font-size: 23px;
@@ -186,6 +190,15 @@ input[type="radio"]:checked + span{
     cursor: context-menu;
 }
 
+.scoreTablePoint {
+    color: white;
+    font-size: 3.5vh;
+    font-weight: bold;
+    margin: 9.5px 0;
+    cursor: context-menu;
+    text-align: center; //dodane
+}
+
 .instructionPointText{
     color: #E5D2BC;
 }
@@ -202,11 +215,10 @@ input[type="radio"]:checked + span{
     width: 11%;
 }
 
-/*#instructionCloseButton{*/
+/*#scoreTableRetryButton, #scoreTableButton {*/
     /*color: white;*/
     /*background-color: #FF8619;*/
     /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);*/
-    /*z-index: 7;*/
 /*}*/
 
 #gameEnd{
@@ -274,4 +286,38 @@ input[type="radio"]:checked + span{
     font-weight: bold;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+#gameEndCloseButton{
+    margin-bottom: 10px;
+}
+
+#scores{
+    text-align: left;
+    display: none;
+}
+
+#scoreTableHeader {
+    color: #FF8619;
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.5);;
+    font-size: 9vh;
+    font-weight: bold;
+    cursor: context-menu;
+    text-align: center;
+    margin-top: 1vh;
+}
+.scoreTableBackground {
+    display: flex;
+    justify-content: center;
+    background-color: #1b6d85;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.scoreTablePoint li {
+    float: none;
+    font-size: xx-large;
+    display: flex;
+    color: #E5D2BC;
 }

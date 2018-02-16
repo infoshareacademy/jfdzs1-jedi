@@ -97,6 +97,7 @@ function CreateGame() {
     var quantityBox = 9;
     var round = 1;
     var score = 0;
+    var scoreToTable;
     var roundScore = 0;
     var totalRoundPoints = 0;
     var setGameTime = 30;
@@ -199,7 +200,6 @@ function CreateGame() {
                     seconds--;
                     mSeconds = 9;
                 }
-                console.log(setGameTime);
             }
         }, 100);
 
@@ -258,11 +258,123 @@ function CreateGame() {
     }
 
     function showResult() {
+        scoreToTable = score;
         $('#endGameScoreText').text("Twój wynik: " + score);
         $('#gameEnd').show();
         $coverRound.show();
         $coverRound.addClass('instructionBackground');
         $coverRound.addClass('coverRoundShow');
+    }
+
+// Funkcja z serwera
+//     function showResult() {
+//         let scoreToTable = score;
+//         $('#roundText').show().html("<div id='endGameText'>KONIEC GRY</div><div id='endGameScoreText'>Twój wynik: " + score + "</div>" +
+//             "   <button id='scoreTableButton' class='btn btn-default center-block'>Lista wyników</button>");
+//         $('#coverRound').show();
+//         $('#coverRound').addClass('instructionBackground');
+//         $('#coverRound').addClass('coverRoundShow');
+//     }
+
+    $('#scoreTableButton').click(function () {
+        let level;
+        $('#gameEnd').hide();
+        switch (levelL) {
+            case 9:
+                level = "easyLevel";
+                break;
+            case 16:
+                level = "midLevel";
+                break;
+            case 25:
+                level = "hardLevel";
+                break;
+            default:
+                level = "easyLevel";
+        }
+        // showScoreList();
+        mangingScoreList(scoreToTable, level);
+        $('#scores').show();
+    });
+
+    // function showScoreList() {
+    //     menuEnabled();
+    //     $('#scores').show();
+    //     // $('#roundText').css('text-align', 'left');
+    //     // $('#roundText').show().html("<div id='scoreTableHeader'>TWOJE WYNIKI: </div>" +
+    //     //     "<div class='container-fluid'>" +
+    //     //     "   <div class='scoreTablePoint col-xs-4'>łatwy: " +
+    //     //     "       <ol id='easyLevel'>" +
+    //     //     "       </ol>" +
+    //     //     "   </div>" +
+    //     //     "   <div class='scoreTablePoint col-xs-4'>średni: " +
+    //     //     "       <ol id='midLevel'>" +
+    //     //     "       </ol>" +
+    //     //     "   </div>" +
+    //     //     "   <div class='scoreTablePoint col-xs-4'>trudny: " +
+    //     //     "       <ol id='hardLevel'>" +
+    //     //     "       </ol>" +
+    //     //     "   </div>" +
+    //     //     "</div>" +
+    //     //     "<div>" +
+    //     //     "   <button id='scoreTableRetryButton' class='btn btn-default center-block'>Zagraj ponownie</button>" +
+    //     //     "</div>");
+    //     $('#coverRound').addClass('scoreTableBackground');
+    //     $('#coverRound').addClass('coverRoundShow');
+    //     $('#play').removeAttr('disabled');
+    //     $difficultyLevelChecked.removeAttr('disabled');
+    //
+    //
+    //     // mangingScoreList(score, level);
+    // }
+
+    $('#scoreTableRetryButton').click(function () {
+        $('#coverRound').hide();
+        $('#scores').hide();
+        menuEnabled();
+        $('#stop').attr('disabled', 'disabled');
+        // $('#play').removeAttr('disabled');
+        // $difficultyLevelChecked.removeAttr('disabled');
+        // setTimeout(counter(), 3000)
+    });
+
+    function checkScore(score, level) {
+        let levelArray = ["easyLevel", "midLevel", "hardLevel"],
+            scoreArray,
+            zerosArray;
+
+        for (let i = 0; i < levelArray.length; i++) {
+            if (WHReadCookie(levelArray[i]) === null) {
+                zerosArray = ["0", "0", "0", "0", "0"];
+                WHCreateCookie(levelArray[i], zerosArray, 14);
+            }
+        }
+
+        scoreArray = WHReadCookie(level).split(",");
+
+        for (let j = 0; j < scoreArray.length; j++) {
+            if (score > parseFloat(scoreArray[j])) {
+                scoreArray.splice(j, 0, score.toString());
+                if (scoreArray.length > 5) {
+                    scoreArray.pop();
+                }
+                break
+            }
+        }
+        WHCreateCookie(level, scoreArray, 14);
+        return scoreArray
+    }
+
+    function mangingScoreList(score, level, levelArray = ["easyLevel", "midLevel", "hardLevel"]) {
+        checkScore(score, level);
+        for (i = 0; i < levelArray.length; i++) {
+            let list = WHReadCookie(levelArray[i]).split(",");
+            $('#' + levelArray[i]).empty();
+            for (let j = 0; j < list.length; j++) {
+                let template = '<li>' + list[j] + '</li>';
+                $('#' + levelArray[i]).append(template);
+            }
+        }
     }
 
     function counter() {
@@ -304,6 +416,33 @@ function CreateGame() {
         }, 1000);
     }
 
+    // function showInstruction() {
+    //     $('#play').attr('disabled', 'disabled');
+    //     $('#stop').attr('disabled', 'disabled');
+    //     $difficultyLevelChecked.attr('disabled', 'disabled');
+    //     $('#roundText').css('text-align', 'left');
+    //     $('#roundText').show().html("<div id='instructionHeader'>INSTRUKCJA GRY</div>" +
+    //         "<div class='instructionPoint'>CEL GRY: " +
+    //         "   <span class='instructionPointText'>uzyskać jak najwięcej punktów</span></div>" +
+    //         "<div class='instructionPoint'>STEROWANIE:" +
+    //         "   <img class='instructionImgMouse' src='images/instructionMouseControl.png'> ," +
+    //         "   <img class='instructionImgMouse' src='images/instructionMouseButton.png'>" +
+    //         "</div>" +
+    //         "<div class='instructionPoint'>POZIOM TRUDNOŚCI: " +
+    //         "   <span class='instructionPointText'>łatwy, średni, trudny</span></div>" +
+    //         "<div class='instructionPoint'>CZAS: " +
+    //         "   <span class='instructionPointText'>30s runda</span></div>" +
+    //         "<div class='instructionPoint'>PUNKTY: " +
+    //         "   <span class='instructionPointText'><img id='instructionImgCoin' src='images/coin.png'> +1</span>" +
+    //         "   <span class='instructionPointText'> <img id='instructionImgThief' src='images/thief.png'>-1</span>" +
+    //         "</div>" +
+    //         "<div class='instructionPoint'>KONIEC GRY: " +
+    //         "   <span class='instructionPointText'>< 70% punktów w rundzie</span></div>" +
+    //         "<button id='instructionCloseButton' class='btn btn-default center-block'>Zamknij</button>");
+    //     $('#coverRound').addClass('instructionBackground');
+    //     $('#coverRound').addClass('coverRoundShow');
+    // }
+
     function showInstruction() {
         menuDisabled();
         $('#gameInstruction').show();
@@ -318,18 +457,25 @@ function CreateGame() {
     });
 
     $('#instructionCloseButton').click(function () {
-        menyEnabled();
+        menuEnabled();
         $stopButton.attr('disabled', 'disabled');
         $coverRound.hide();
         $('#gameInstruction').hide();
     });
 
     $('#gameEndCloseButton').click(function () {
-        menyEnabled();
+        menuEnabled();
         $stopButton.attr('disabled', 'disabled');
         $('#gameEnd').hide();
         $coverRound.hide();
-    })
+    });
+
+    $('#rankingButton').click(function () {
+        menuDisabled();
+        $('#scores').show();
+        $('#coverRound').show();
+        mangingScoreList(0, "easyLevel");
+    });
 
     function menuDisabled() {
         $playButton.attr('disabled', 'disabled');
@@ -339,14 +485,13 @@ function CreateGame() {
         $('#instructionButton').attr('disabled', 'disabled');
     }
 
-    function menyEnabled() {
+    function menuEnabled() {
         $playButton.removeAttr('disabled');
         $stopButton.removeAttr('disabled');
         $difficultyLevelChecked.removeAttr('disabled');
         $('#rankingButton').removeAttr('disabled');
         $('#instructionButton').removeAttr('disabled');
     }
-
 }
 
 var game = new CreateGame();
