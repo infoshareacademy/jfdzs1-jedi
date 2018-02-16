@@ -291,7 +291,7 @@ button[type=button]:hover {
     margin: auto;
     flex-direction: column;
     text-align: center;
-    color: /*#FF8619*/ #E5D2BC;
+    color: #E5D2BC;
     height: 160px;
 }
 
@@ -311,9 +311,6 @@ button[type=button]:hover {
     }
 }
 
-/*.glyphicon {
-    position: inherit;
-}*/
 /*********************************/
 /*********about authors***********/
 
@@ -383,7 +380,7 @@ div.author {
     margin: 7px;
 }
 
-.email:hover{
+.email:hover {
     margin: 6px;
 }
 
@@ -398,6 +395,8 @@ div.author {
 
 .comingSoon {
     margin: 10em auto;
+    margin-bottom: 7em;
+
 }
 
 .comingSoon h1 {

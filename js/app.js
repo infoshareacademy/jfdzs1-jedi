@@ -1,8 +1,16 @@
 // loader
 
 $('.signUp').on('click', function () {
-    var $this = $(this);
-    $this.button('loading');
+    event.preventDefault();
+    if ($('#singUpEmail').val().indexOf('@') > -1) {
+        var $this = $(this);
+        $this.button('loading');
+        WHCreateCookie('jediGame', 'avaliable', 183);
+        $('#singUpForm').submit();
+    } else {
+        alert("Musisz podać adres email");
+    }
+    $('#singUpEmail').val('');
 });
 
 // smooth scroll
@@ -17,4 +25,3 @@ $(".links").click(function () {
 function myFunction(x) {
     x.classList.toggle("change");
 };
-

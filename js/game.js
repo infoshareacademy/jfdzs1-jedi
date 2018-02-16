@@ -1,3 +1,4 @@
+var gameAvaliable = 0;
 var $gamePlace = $('#game');
 var $playArea = $('.playArea');
 var $playButton = $('#play');
@@ -79,7 +80,6 @@ function CreateBox(idBlock) {
             if (boxState) {
                 $('#' + id + ' .coin').hide();
                 $('#' + id + ' .safeDoor').css('transform', 'rotateY(0deg)');
-                // $('#' + id).removeClass('active');
                 boxState = 0;
                 $('#' + id + ' .thief').hide();
                 soundCloseDoor.play();
@@ -113,7 +113,6 @@ function CreateGame() {
     createGameArea();
 
     function createGameArea() {
-        // $('#game').empty();
         $('.playArea').remove();
         gameArea = [];
         for (var i = 0; i < levelL; i++) {
@@ -156,7 +155,7 @@ function CreateGame() {
     function startGame() {
         menuDisabled();
         $('#stop').removeAttr('disabled');
-        $('#level').text(round); // wyświetla która runda
+        $('#level').text(round);
         timeCounterInterval = setInterval(function () {
             $('#timeToEnd').text(seconds + '.' + mSeconds);
             if (seconds === 0 && mSeconds === 0) { // end round time
@@ -203,13 +202,11 @@ function CreateGame() {
             }
         }, 100);
 
-//      Tworzymy nowy podświetlany box co pewnien okres czasu
+        // Open safe
         activeGameInterval = setInterval(function () {
-            // $('#' + divColor).removeClass('activeGood');
             gameArea[divColor].removeActiveBox();
             if (setGameTime >= (timeBetweenBoxes / 1000)) {
                 divColor = Math.floor(Math.random() * quantityBox);
-                // $('#' + divColor).addClass('activeGood');
                 goodBadBox = Math.round(Math.random() * frequencyOfTheThiefShow);
                 gameArea[divColor].setActiveBox(goodBadBox);
                 soundOpenDoor.play();
@@ -217,7 +214,7 @@ function CreateGame() {
             }
         }, timeBetweenBoxes);
 
-        // Jeżeli klikniemy na aktywny box, to zwiększamy punktację
+        // Get points
         $('.playArea').click(function () {
             var boxNumber = parseInt($(this).attr("id"));
             boxState = gameArea[boxNumber].getBoxState();
@@ -249,6 +246,7 @@ function CreateGame() {
         showResult();
         score = 0;
         round = 1;
+        divColor = 0;
         timeBetweenBoxes = timeBetweenBoxesOriginal;
         menuDisabled();
         $('.playArea').removeClass('active');
@@ -266,18 +264,8 @@ function CreateGame() {
         $coverRound.addClass('coverRoundShow');
     }
 
-// Funkcja z serwera
-//     function showResult() {
-//         let scoreToTable = score;
-//         $('#roundText').show().html("<div id='endGameText'>KONIEC GRY</div><div id='endGameScoreText'>Twój wynik: " + score + "</div>" +
-//             "   <button id='scoreTableButton' class='btn btn-default center-block'>Lista wyników</button>");
-//         $('#coverRound').show();
-//         $('#coverRound').addClass('instructionBackground');
-//         $('#coverRound').addClass('coverRoundShow');
-//     }
-
     $('#scoreTableButton').click(function () {
-        let level;
+        var level;
         $('#gameEnd').hide();
         switch (levelL) {
             case 9:
@@ -292,58 +280,23 @@ function CreateGame() {
             default:
                 level = "easyLevel";
         }
-        // showScoreList();
         mangingScoreList(scoreToTable, level);
         $('#scores').show();
     });
-
-    // function showScoreList() {
-    //     menuEnabled();
-    //     $('#scores').show();
-    //     // $('#roundText').css('text-align', 'left');
-    //     // $('#roundText').show().html("<div id='scoreTableHeader'>TWOJE WYNIKI: </div>" +
-    //     //     "<div class='container-fluid'>" +
-    //     //     "   <div class='scoreTablePoint col-xs-4'>łatwy: " +
-    //     //     "       <ol id='easyLevel'>" +
-    //     //     "       </ol>" +
-    //     //     "   </div>" +
-    //     //     "   <div class='scoreTablePoint col-xs-4'>średni: " +
-    //     //     "       <ol id='midLevel'>" +
-    //     //     "       </ol>" +
-    //     //     "   </div>" +
-    //     //     "   <div class='scoreTablePoint col-xs-4'>trudny: " +
-    //     //     "       <ol id='hardLevel'>" +
-    //     //     "       </ol>" +
-    //     //     "   </div>" +
-    //     //     "</div>" +
-    //     //     "<div>" +
-    //     //     "   <button id='scoreTableRetryButton' class='btn btn-default center-block'>Zagraj ponownie</button>" +
-    //     //     "</div>");
-    //     $('#coverRound').addClass('scoreTableBackground');
-    //     $('#coverRound').addClass('coverRoundShow');
-    //     $('#play').removeAttr('disabled');
-    //     $difficultyLevelChecked.removeAttr('disabled');
-    //
-    //
-    //     // mangingScoreList(score, level);
-    // }
 
     $('#scoreTableRetryButton').click(function () {
         $('#coverRound').hide();
         $('#scores').hide();
         menuEnabled();
         $('#stop').attr('disabled', 'disabled');
-        // $('#play').removeAttr('disabled');
-        // $difficultyLevelChecked.removeAttr('disabled');
-        // setTimeout(counter(), 3000)
     });
 
     function checkScore(score, level) {
-        let levelArray = ["easyLevel", "midLevel", "hardLevel"],
+        var levelArray = ["easyLevel", "midLevel", "hardLevel"],
             scoreArray,
             zerosArray;
 
-        for (let i = 0; i < levelArray.length; i++) {
+        for (var i = 0; i < levelArray.length; i++) {
             if (WHReadCookie(levelArray[i]) === null) {
                 zerosArray = ["0", "0", "0", "0", "0"];
                 WHCreateCookie(levelArray[i], zerosArray, 14);
@@ -352,7 +305,7 @@ function CreateGame() {
 
         scoreArray = WHReadCookie(level).split(",");
 
-        for (let j = 0; j < scoreArray.length; j++) {
+        for (var j = 0; j < scoreArray.length; j++) {
             if (score > parseFloat(scoreArray[j])) {
                 scoreArray.splice(j, 0, score.toString());
                 if (scoreArray.length > 5) {
@@ -367,11 +320,11 @@ function CreateGame() {
 
     function mangingScoreList(score, level, levelArray = ["easyLevel", "midLevel", "hardLevel"]) {
         checkScore(score, level);
-        for (i = 0; i < levelArray.length; i++) {
-            let list = WHReadCookie(levelArray[i]).split(",");
+        for (var i = 0; i < levelArray.length; i++) {
+            var list = WHReadCookie(levelArray[i]).split(",");
             $('#' + levelArray[i]).empty();
-            for (let j = 0; j < list.length; j++) {
-                let template = '<li>' + list[j] + '</li>';
+            for (var j = 0; j < list.length; j++) {
+                var template = '<li>' + list[j] + '</li>';
                 $('#' + levelArray[i]).append(template);
             }
         }
@@ -415,33 +368,6 @@ function CreateGame() {
             return
         }, 1000);
     }
-
-    // function showInstruction() {
-    //     $('#play').attr('disabled', 'disabled');
-    //     $('#stop').attr('disabled', 'disabled');
-    //     $difficultyLevelChecked.attr('disabled', 'disabled');
-    //     $('#roundText').css('text-align', 'left');
-    //     $('#roundText').show().html("<div id='instructionHeader'>INSTRUKCJA GRY</div>" +
-    //         "<div class='instructionPoint'>CEL GRY: " +
-    //         "   <span class='instructionPointText'>uzyskać jak najwięcej punktów</span></div>" +
-    //         "<div class='instructionPoint'>STEROWANIE:" +
-    //         "   <img class='instructionImgMouse' src='images/instructionMouseControl.png'> ," +
-    //         "   <img class='instructionImgMouse' src='images/instructionMouseButton.png'>" +
-    //         "</div>" +
-    //         "<div class='instructionPoint'>POZIOM TRUDNOŚCI: " +
-    //         "   <span class='instructionPointText'>łatwy, średni, trudny</span></div>" +
-    //         "<div class='instructionPoint'>CZAS: " +
-    //         "   <span class='instructionPointText'>30s runda</span></div>" +
-    //         "<div class='instructionPoint'>PUNKTY: " +
-    //         "   <span class='instructionPointText'><img id='instructionImgCoin' src='images/coin.png'> +1</span>" +
-    //         "   <span class='instructionPointText'> <img id='instructionImgThief' src='images/thief.png'>-1</span>" +
-    //         "</div>" +
-    //         "<div class='instructionPoint'>KONIEC GRY: " +
-    //         "   <span class='instructionPointText'>< 70% punktów w rundzie</span></div>" +
-    //         "<button id='instructionCloseButton' class='btn btn-default center-block'>Zamknij</button>");
-    //     $('#coverRound').addClass('instructionBackground');
-    //     $('#coverRound').addClass('coverRoundShow');
-    // }
 
     function showInstruction() {
         menuDisabled();

@@ -1,5 +1,6 @@
-#gamePlace{
+#gamePlace {
     margin-bottom: 50px;
+    display: none;
 }
 
 .playArea {
@@ -11,15 +12,15 @@
     perspective: 1500px;
 }
 
-.playAreaSafe9{
+.playAreaSafe9 {
     height: 23.333vh;
 }
 
-.playAreaSafe16{
+.playAreaSafe16 {
     height: 17.5vh;
 }
 
-.playAreaSafe25{
+.playAreaSafe25 {
     height: 14vh;
     display: inline-block;
     float: left;
@@ -44,9 +45,9 @@
     height: 100%;
 }
 
-.safeDoor .safeDoorBack{
+.safeDoor .safeDoorBack {
     transform: rotateY(180deg);
-    background:#6B6A6A;
+    background: #6B6A6A;
     border: solid 2px black;
     width: 100%;
     height: 100%;
@@ -102,17 +103,17 @@
         align-items: center;
     }
 
-    #menuButtons{
+    #menuButtons {
         display: flex;
         flex-direction: column-reverse;
     }
 }
 
-#result h2{
+#result h2 {
     cursor: context-menu;
 }
 
-label{
+label {
     font-family: inherit;
     font-size: 23px;
     font-weight: 600;
@@ -120,23 +121,23 @@ label{
     margin: 0 5px;
 }
 
-input[type="radio"] + span{
+input[type="radio"] + span {
     cursor: pointer;
 }
 
-input[type="radio"]:disabled + span{
+input[type="radio"]:disabled + span {
     cursor: context-menu;
 }
 
-input[type="radio"]{
+input[type="radio"] {
     cursor: pointer;
 }
 
-input[type="radio"]:disabled{
+input[type="radio"]:disabled {
     cursor: context-menu;
 }
 
-input[type="radio"]:checked + span{
+input[type="radio"]:checked + span {
     color: #FF8619;
     cursor: context-menu;
 }
@@ -168,12 +169,12 @@ input[type="radio"]:checked + span{
     cursor: context-menu;
 }
 
-.instructionBackground{
+.instructionBackground {
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-#instructionHeader{
+#instructionHeader {
     font-size: 7vh;
     font-weight: bold;
     text-align: center;
@@ -182,7 +183,7 @@ input[type="radio"]:checked + span{
     cursor: context-menu;
 }
 
-.instructionPoint{
+.instructionPoint {
     color: white;
     font-size: 3.5vh;
     font-weight: bold;
@@ -196,32 +197,27 @@ input[type="radio"]:checked + span{
     font-weight: bold;
     margin: 9.5px 0;
     cursor: context-menu;
-    text-align: center; //dodane
+    text-align: center;
+/ / dodane
 }
 
-.instructionPointText{
+.instructionPointText {
     color: #E5D2BC;
 }
 
-.instructionImgMouse{
+.instructionImgMouse {
     width: 11vh;
 }
 
-#instructionImgCoin{
+#instructionImgCoin {
     width: 10%;
 }
 
-#instructionImgThief{
+#instructionImgThief {
     width: 11%;
 }
 
-/*#scoreTableRetryButton, #scoreTableButton {*/
-    /*color: white;*/
-    /*background-color: #FF8619;*/
-    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);*/
-/*}*/
-
-#gameEnd{
+#gameEnd {
     display: none;
 }
 
@@ -240,11 +236,11 @@ input[type="radio"]:checked + span{
     cursor: context-menu;
 }
 
-.gameButtonsMenu{
+.gameButtonsMenu {
     margin: 6px 4px;
 }
 
-.gameButtons{
+.gameButtons {
     color: white;
     font-weight: bold;
     background-color: #FF8619;
@@ -253,7 +249,7 @@ input[type="radio"]:checked + span{
     font-size: 2vh;
 }
 
-.gameButtons:hover{
+.gameButtons:hover {
     color: #36312C;
     border: 3px solid #FF8619;
     font-weight: bold;
@@ -261,7 +257,7 @@ input[type="radio"]:checked + span{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-.gameButtons[disabled]{
+.gameButtons[disabled] {
     color: #36312C;
     border: 3px solid #FF8619;
     font-weight: bold;
@@ -271,7 +267,7 @@ input[type="radio"]:checked + span{
     cursor: context-menu;
 }
 
-.gameButtons[disabled]:hover{
+.gameButtons[disabled]:hover {
     color: #36312C;
     border: 3px solid #FF8619;
     font-weight: bold;
@@ -280,7 +276,7 @@ input[type="radio"]:checked + span{
     opacity: 0.5;
 }
 
-.gameButtons:focus:active:visited{
+.gameButtons:focus:active:visited {
     color: #36312C;
     border: 3px solid #FF8619;
     font-weight: bold;
@@ -288,11 +284,11 @@ input[type="radio"]:checked + span{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-#gameEndCloseButton{
+#gameEndCloseButton {
     margin-bottom: 10px;
 }
 
-#scores{
+#scores {
     text-align: left;
     display: none;
 }
@@ -306,6 +302,7 @@ input[type="radio"]:checked + span{
     text-align: center;
     margin-top: 1vh;
 }
+
 .scoreTableBackground {
     display: flex;
     justify-content: center;
