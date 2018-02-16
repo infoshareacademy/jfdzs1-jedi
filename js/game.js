@@ -268,20 +268,17 @@ function CreateGame() {
     function counter() {
         $coverRound.removeClass('coverRoundShow');
         menuDisabled();
-        $roundText.hide();
         $coverRound.css("box-shadow", "none");
         $coverRound.removeClass('instructionBackground');
-        $coverRound.show();
         var countNumber = 3;
         var countTimeout = setInterval(function () {
+            $roundText.show();
+            $coverRound.show();
             if (countNumber > 0) {
-                // $('#roundText').text(countNumber);
-                $roundText.text(countNumber).fadeIn(700, function () {
-                    $(this).hide();
+                $roundText.text(countNumber).fadeOut(800, function () {
                 });
             } else if (countNumber === 0) {
-                $roundText.text('START').fadeIn(700, function () {
-                    $(this).hide();
+                $roundText.text('START').fadeOut(800, function () {
                 });
             } else {
                 $roundText.hide();
@@ -291,19 +288,20 @@ function CreateGame() {
                 return;
             }
             countNumber--;
-        }, 800);
+        }, 900);
     }
 
     function showRound() {
         $coverRound.show();
-        $roundText.text('Runda ' + round).fadeIn(700);
+        $roundText.show();
+        $roundText.text('Runda ' + round).fadeOut(900);
         var timeout = setTimeout(function () {
             $coverRound.hide();
             $roundText.hide();
             clearTimeout(timeout);
             startGame();
             return
-        }, 700);
+        }, 1000);
     }
 
     function showInstruction() {
