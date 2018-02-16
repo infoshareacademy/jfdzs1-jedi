@@ -71,10 +71,32 @@ function firstAutorsFlip() {
 
 // about authors animations
 
-var firtScrollToFlipCard = 1;
-
 $cardClass.hover(function () {
     $(this).css('transform', 'rotateY(180deg)');
 }, function () {
     $(this).css('transform', 'rotateY(0deg)');
+});
+
+$('.email').hover(function () {
+    $(this).addClass('iconHover');
+    $(this).attr('src','images/emailo.png');
+},function () {
+    $(this).removeClass('iconHover');
+    $(this).attr('src','images/email.png');
+});
+
+$('.facebook').hover(function () {
+    $(this).addClass('iconHover');
+    $(this).attr('src','images/facebooko.png');
+},function () {
+    $(this).removeClass('iconHover');
+    $(this).attr('src','images/facebook.png');
+});
+
+$('.github').hover(function () {
+    $(this).addClass('iconHover');
+    $(this).attr('src','images/githubo.png');
+},function () {
+    $(this).removeClass('iconHover');
+    $(this).attr('src','images/github.png');
 });

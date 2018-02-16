@@ -11,18 +11,48 @@
     perspective: 1500px;
 }
 
+.playAreaSafe9{
+    height: 23.333vh;
+}
+
+.playAreaSafe16{
+    height: 17.5vh;
+}
+
+.playAreaSafe25{
+    height: 14vh;
+    display: inline-block;
+    float: left;
+    width: 20%;
+}
+
 .safeDoor {
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    width: 100%;
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
     z-index: 3;
+    transform-origin: left;
+}
+
+.safeDoor .safeDoorFront {
     backface-visibility: hidden;
     overflow: hidden;
-    transform-style: preserve-3d;
-    transform-origin: left;
-    transition: 0.4s transform linear;
+    width: 100%;
+    height: 100%;
+}
+
+.safeDoor .safeDoorBack{
+    transform: rotateY(180deg);
+    background:#6B6A6A;
+    border: solid 2px black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .coin {
@@ -46,9 +76,8 @@
 }
 
 .active {
-    z-index: 4;
+    z-index: 6;
 }
-
 
 #game {
     height: 70vh;
@@ -72,13 +101,47 @@
         justify-content: space-around;
         align-items: center;
     }
+
+    #menuButtons{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+label{
+    font-family: inherit;
+    font-size: 23px;
+    font-weight: 600;
+    color: inherit;
+    margin: 0 5px;
+}
+
+input[type="radio"] + span{
+    cursor: pointer;
+}
+
+input[type="radio"]:disabled + span{
+    cursor: context-menu;
+}
+
+input[type="radio"]{
+    cursor: pointer;
+}
+
+input[type="radio"]:disabled{
+    cursor: context-menu;
+}
+
+input[type="radio"]:checked + span{
+    color: #FF8619;
+    cursor: context-menu;
 }
 
 #coverRound {
     position: absolute;
     margin-left: 1%;
     margin-top: 1%;
-    height: 98%;
+    height: 68vh;
     width: 94%;
     z-index: 2;
     display: flex;
@@ -98,6 +161,7 @@
     text-align: center;
     color: #FF8619;
     text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+    cursor: context-menu;
 }
 
 .instructionBackground{
@@ -106,14 +170,20 @@
 }
 
 #instructionHeader{
-    font-size: 0.5em;
+    font-size: 7vh;
+    font-weight: bold;
     text-align: center;
+    color: #FF8619;
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+    cursor: context-menu;
 }
 
 .instructionPoint{
     color: white;
-    font-size: 0.25em;
-    margin: 0.3em 0;
+    font-size: 3.5vh;
+    font-weight: bold;
+    margin: 9.5px 0;
+    cursor: context-menu;
 }
 
 .instructionPointText{
@@ -121,7 +191,7 @@
 }
 
 .instructionImgMouse{
-    height: 12vh;
+    width: 11vh;
 }
 
 #instructionImgCoin{
@@ -132,20 +202,76 @@
     width: 11%;
 }
 
-#instructionCloseButton{
-    color: white;
-    background-color: #FF8619;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+/*#instructionCloseButton{*/
+    /*color: white;*/
+    /*background-color: #FF8619;*/
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);*/
+    /*z-index: 7;*/
+/*}*/
+
+#gameEnd{
+    display: none;
 }
 
 #endGameText {
     color: #FF8619;
     text-shadow: 4px 4px rgba(0, 0, 0, 0.5);;
-    font-size: 0.6em;
+    font-size: 9vh;
+    font-weight: bold;
+    cursor: context-menu;
 }
 
 #endGameScoreText {
     color: #E5D2BC;
-    font-size: 0.5em;
+    font-size: 6.5vh;
+    font-weight: bold;
+    cursor: context-menu;
 }
 
+.gameButtonsMenu{
+    margin: 6px 4px;
+}
+
+.gameButtons{
+    color: white;
+    font-weight: bold;
+    background-color: #FF8619;
+    border: 3px solid #FF8619;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    font-size: 2vh;
+}
+
+.gameButtons:hover{
+    color: #36312C;
+    border: 3px solid #FF8619;
+    font-weight: bold;
+    background-color: #FF8619;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.gameButtons[disabled]{
+    color: #36312C;
+    border: 3px solid #FF8619;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    opacity: 0.5;
+    cursor: context-menu;
+}
+
+.gameButtons[disabled]:hover{
+    color: #36312C;
+    border: 3px solid #FF8619;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    opacity: 0.5;
+}
+
+.gameButtons:focus:active:visited{
+    color: #36312C;
+    border: 3px solid #FF8619;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
