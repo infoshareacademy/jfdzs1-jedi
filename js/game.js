@@ -324,7 +324,7 @@ function CreateGame() {
             var list = WHReadCookie(levelArray[i]).split(",");
             $('#' + levelArray[i]).empty();
             for (var j = 0; j < list.length; j++) {
-                var template = '<li>' + list[j] + '</li>';
+                var template = '<div>' + list[j] + '</div>';
                 $('#' + levelArray[i]).append(template);
             }
         }

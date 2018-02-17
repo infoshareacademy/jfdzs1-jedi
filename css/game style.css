@@ -109,8 +109,22 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+    form label {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    form label {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
 #result h2 {
-    cursor: context-menu;
+    cursor: default;
 }
 
 label {
@@ -126,7 +140,7 @@ input[type="radio"] + span {
 }
 
 input[type="radio"]:disabled + span {
-    cursor: context-menu;
+    cursor: default;
 }
 
 input[type="radio"] {
@@ -134,12 +148,12 @@ input[type="radio"] {
 }
 
 input[type="radio"]:disabled {
-    cursor: context-menu;
+    cursor: default;
 }
 
 input[type="radio"]:checked + span {
     color: #FF8619;
-    cursor: context-menu;
+    cursor: default;
 }
 
 #coverRound {
@@ -166,7 +180,7 @@ input[type="radio"]:checked + span {
     text-align: center;
     color: #FF8619;
     text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
-    cursor: context-menu;
+    cursor: default;
 }
 
 .instructionBackground {
@@ -180,7 +194,7 @@ input[type="radio"]:checked + span {
     text-align: center;
     color: #FF8619;
     text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
-    cursor: context-menu;
+    cursor: default;
 }
 
 .instructionPoint {
@@ -188,7 +202,7 @@ input[type="radio"]:checked + span {
     font-size: 3.5vh;
     font-weight: bold;
     margin: 9.5px 0;
-    cursor: context-menu;
+    cursor: default;
 }
 
 .scoreTablePoint {
@@ -196,9 +210,8 @@ input[type="radio"]:checked + span {
     font-size: 3.5vh;
     font-weight: bold;
     margin: 9.5px 0;
-    cursor: context-menu;
+    cursor: default;
     text-align: center;
-/ / dodane
 }
 
 .instructionPointText {
@@ -226,14 +239,14 @@ input[type="radio"]:checked + span {
     text-shadow: 4px 4px rgba(0, 0, 0, 0.5);;
     font-size: 9vh;
     font-weight: bold;
-    cursor: context-menu;
+    cursor: default;
 }
 
 #endGameScoreText {
     color: #E5D2BC;
     font-size: 6.5vh;
     font-weight: bold;
-    cursor: context-menu;
+    cursor: default;
 }
 
 .gameButtonsMenu {
@@ -264,7 +277,7 @@ input[type="radio"]:checked + span {
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
     opacity: 0.5;
-    cursor: context-menu;
+    cursor: default;
 }
 
 .gameButtons[disabled]:hover {
@@ -296,9 +309,9 @@ input[type="radio"]:checked + span {
 #scoreTableHeader {
     color: #FF8619;
     text-shadow: 4px 4px rgba(0, 0, 0, 0.5);;
-    font-size: 9vh;
+    font-size: 7vh;
     font-weight: bold;
-    cursor: context-menu;
+    cursor: default;
     text-align: center;
     margin-top: 1vh;
 }
@@ -312,9 +325,7 @@ input[type="radio"]:checked + span {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-.scoreTablePoint li {
-    float: none;
+.scoreTablePoint div {
     font-size: xx-large;
-    display: flex;
     color: #E5D2BC;
 }
