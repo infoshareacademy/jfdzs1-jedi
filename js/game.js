@@ -18,6 +18,15 @@ var soundThief = document.createElement('audio');
 soundThief.src = "sounds/thief.mp3";
 var soundGun = document.createElement('audio');
 soundGun.src = "sounds/gun.mp3";
+var soundCount = document.createElement('audio');
+soundCount.src = "sounds/count.mp3";
+var soundStart = document.createElement('audio');
+soundStart.src = "sounds/start.mp3";
+var soundNextRound = document.createElement('audio');
+soundNextRound.src = "sounds/nextRound.mp3";
+var soundJames = document.createElement('audio');
+soundJames.src = "sounds/james.mp3";
+soundJames.volume = 0.3;
 
 function CreateBox(idBlock) {
     var id = idBlock;
@@ -156,6 +165,7 @@ function CreateGame() {
         menuDisabled();
         $('#stop').removeAttr('disabled');
         $('#level').text(round);
+        soundJames.play();
         timeCounterInterval = setInterval(function () {
             $('#timeToEnd').text(seconds + '.' + mSeconds);
             if (seconds === 0 && mSeconds === 0) { // end round time
@@ -249,6 +259,8 @@ function CreateGame() {
         divColor = 0;
         timeBetweenBoxes = timeBetweenBoxesOriginal;
         menuDisabled();
+        soundJames.pause();
+        soundJames.currentTime = 0;
         $('.playArea').removeClass('active');
         $('#level').text(" ");
         $('#gameScore').text(score);
@@ -339,10 +351,12 @@ function CreateGame() {
         var countTimeout = setInterval(function () {
             $roundText.show();
             $coverRound.show();
+            if(countNumber > 0) soundCount.play();
             if (countNumber > 0) {
                 $roundText.text(countNumber).fadeOut(800, function () {
                 });
             } else if (countNumber === 0) {
+                soundStart.play();
                 $roundText.text('START').fadeOut(800, function () {
                 });
             } else {
@@ -359,14 +373,15 @@ function CreateGame() {
     function showRound() {
         $coverRound.show();
         $roundText.show();
-        $roundText.text('Runda ' + round).fadeOut(900);
+        soundNextRound.play();
+        $roundText.text('Runda ' + round).fadeOut(1900);
         var timeout = setTimeout(function () {
             $coverRound.hide();
             $roundText.hide();
             clearTimeout(timeout);
             startGame();
             return
-        }, 1000);
+        }, 2000);
     }
 
     function showInstruction() {
