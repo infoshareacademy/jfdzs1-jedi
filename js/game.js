@@ -100,6 +100,7 @@ function CreateBox(idBlock) {
 function CreateGame() {
     var gameArea = [];
     var levelL = 9;
+    var level = "easyLevel";
     var divColor = 0;
     var goodBadBox;
     var frequencyOfTheThiefShow = 10;
@@ -140,18 +141,21 @@ function CreateGame() {
                 timeBetweenBoxesOriginal = timeBetweenBoxes;
                 quantityBox = 9;
                 frequencyOfTheThiefShow = 10;
+                level = "easyLevel";
                 break;
             case 16:
                 timeBetweenBoxes = 1400;
                 timeBetweenBoxesOriginal = timeBetweenBoxes;
                 quantityBox = 16;
                 frequencyOfTheThiefShow = 5;
+                level = "midLevel";
                 break;
             case 25:
                 timeBetweenBoxes = 1200;
                 timeBetweenBoxesOriginal = timeBetweenBoxes;
                 quantityBox = 25;
                 frequencyOfTheThiefShow = 3;
+                level = "hardLevel";
                 break;
         }
         createGameArea();
@@ -274,25 +278,12 @@ function CreateGame() {
         $coverRound.show();
         $coverRound.addClass('instructionBackground');
         $coverRound.addClass('coverRoundShow');
+        mangingScoreList(scoreToTable, level);
     }
 
     $('#scoreTableButton').click(function () {
         var level;
         $('#gameEnd').hide();
-        switch (levelL) {
-            case 9:
-                level = "easyLevel";
-                break;
-            case 16:
-                level = "midLevel";
-                break;
-            case 25:
-                level = "hardLevel";
-                break;
-            default:
-                level = "easyLevel";
-        }
-        mangingScoreList(scoreToTable, level);
         $('#scores').show();
     });
 
